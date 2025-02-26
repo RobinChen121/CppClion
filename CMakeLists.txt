@@ -18,7 +18,7 @@ else()
     message(FATAL_ERROR "Could not find Boost!")
 endif()
 
-add_executable(${PROJECT_NAME} main.cpp junior_practices/fibonacci_test.cpp)
+add_executable(${PROJECT_NAME} main.cpp )
 
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
