@@ -2,7 +2,6 @@
 // Created by Zhen Chen on 2025/2/26.
 //
 
-#include "cmath_test.h"
 #include <iostream>
 #include <cmath>
 

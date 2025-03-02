@@ -1,0 +1,3 @@
+/Users/zhenchen/CLionProjects/CppClion/build/CMakeFiles/CppClion.dir
+/Users/zhenchen/CLionProjects/CppClion/build/CMakeFiles/edit_cache.dir
+/Users/zhenchen/CLionProjects/CppClion/build/CMakeFiles/rebuild_cache.dir

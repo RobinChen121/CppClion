@@ -2,12 +2,12 @@
 // Created by Zhen Chen on 2025/2/22.
 //
 
-#include "fibonacci_test.h"
-
 #include <iostream>
 #include <unordered_map>
 #include <chrono>
 using namespace std;
+#include <boost/multiprecision/cpp_int.hpp>
+using namespace boost::multiprecision; // 包含 cpp_int
 
 // 使用 unordered_map 缓存 Fibonacci 计算结果
 unordered_map<int, cpp_int> cache;
@@ -29,3 +29,16 @@ cpp_int fibonacci(int n) {
      cache[n] = result;
      return result;
  }
+
+int main() {
+    int n = 12000;
+
+    // 计算并输出结果
+    auto start = std::chrono::high_resolution_clock::now();
+    cout << "Fibonacci(" << n << ") = " << fibonacci(n) << endl;
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "running time is " << duration << std::endl;
+
+    return 0;
+}

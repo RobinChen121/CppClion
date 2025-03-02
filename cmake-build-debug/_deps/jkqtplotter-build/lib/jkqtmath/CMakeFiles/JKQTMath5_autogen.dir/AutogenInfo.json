@@ -1,0 +1,227 @@
+{
+	"BUILD_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/JKQTMath5_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath",
+	"CMAKE_EXECUTABLE" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/CMakeLists.txt",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/LibTarget.cmake.in",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/readme.txt.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/JKQTMath5_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "JKQTMath5_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtmath_imexport.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtmath_imexport.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpalgorithms.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpalgorithms.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtparraytools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtparraytools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtplinalgtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtplinalgtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpmathparser.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpmathparser.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatbasics.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatbasics.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatgrouped.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatgrouped.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstathistogram.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstathistogram.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatisticstools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatisticstools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatkde.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatkde.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatpoly.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatpoly.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatregression.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstatregression.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/private/jkqtmath_precomp.h",
+			"MU",
+			"PGVKHOT7RA/moc_jkqtmath_precomp.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/JKQTMath5_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/JKQTMath5_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"JKQTCOMMON_LIB_IN_DLL",
+		"JKQTMATH_LIB_EXPORT_LIBRARY",
+		"JKQTMATH_LIB_IN_DLL",
+		"JKQTMath5_EXPORTS",
+		"JKQtPlotter_HAS_j0",
+		"JKQtPlotter_HAS_jn",
+		"JKQtPlotter_HAS_y0",
+		"JKQtPlotter_HAS_yn",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath",
+		"/opt/homebrew/Cellar/boost/1.87.0/include",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon",
+		"/opt/anaconda3/include/qt",
+		"/opt/anaconda3/include/qt/QtCore",
+		"/opt/anaconda3/mkspecs/macx-clang",
+		"/opt/anaconda3/include/qt/QtGui",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
+		"/opt/anaconda3/include/qt/QtXml",
+		"/opt/anaconda3/include/qt/QtWidgets",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++",
+		"-std=gnu++11",
+		"-dM",
+		"-E",
+		"-c",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/JKQTMath5_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/CMakeFiles/JKQTMath5_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/opt/anaconda3/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/opt/anaconda3/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmath/CMakeFiles/JKQTMath5_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpalgorithms.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtparraytools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtplinalgtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpmathparser.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatbasics.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatgrouped.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstathistogram.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatkde.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatpoly.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmath/jkqtpstatregression.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

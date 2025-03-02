@@ -1,0 +1,273 @@
+{
+	"BUILD_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/JKQTCommon5_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon",
+	"CMAKE_EXECUTABLE" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/CMakeLists.txt",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/LibTarget.cmake.in",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/readme.txt.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/JKQTCommon5_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "JKQTCommon5_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtcommon_imexport.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtcommon_imexport.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpbasicimagetools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpbasicimagetools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcachingtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpcachingtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcodestructuring.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpcodestructuring.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpconcurrencytools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpconcurrencytools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcsstools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpcsstools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpdebuggingtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpdebuggingtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpdrawingtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpdrawingtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpenhancedpainter.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpenhancedpainter.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpexpected.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpexpected.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpgeometrytools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpgeometrytools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtphighrestimer.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtphighrestimer.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpicons.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpicons.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpmathtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpmathtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpstringtools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtpstringtools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqttools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqttools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/private/jkqtcommon_precomp.h",
+			"MU",
+			"PGVKHOT7RA/moc_jkqtcommon_precomp.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/JKQTCommon5_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/JKQTCommon5_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"JKQTCOMMON_LIB_EXPORT_LIBRARY",
+		"JKQTCOMMON_LIB_IN_DLL",
+		"JKQTCommon5_EXPORTS",
+		"JKQtPlotter_HAS_j0",
+		"JKQtPlotter_HAS_jn",
+		"JKQtPlotter_HAS_y0",
+		"JKQtPlotter_HAS_yn",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon",
+		"/opt/homebrew/Cellar/boost/1.87.0/include",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/opt/anaconda3/include/qt",
+		"/opt/anaconda3/include/qt/QtCore",
+		"/opt/anaconda3/mkspecs/macx-clang",
+		"/opt/anaconda3/include/qt/QtGui",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
+		"/opt/anaconda3/include/qt/QtXml",
+		"/opt/anaconda3/include/qt/QtWidgets",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++",
+		"-std=gnu++11",
+		"-dM",
+		"-E",
+		"-c",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/JKQTCommon5_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/CMakeFiles/JKQTCommon5_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/opt/anaconda3/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/opt/anaconda3/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtcommon/CMakeFiles/JKQTCommon5_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpbasicimagetools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcachingtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcodestructuring.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpconcurrencytools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpcsstools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpdebuggingtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpdrawingtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpenhancedpainter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpexpected.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpgeometrytools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtphighrestimer.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpicons.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpmathtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqtpstringtools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon/jkqttools.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

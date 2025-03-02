@@ -1,0 +1,382 @@
+{
+	"BUILD_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/JKQTMathText5_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext",
+	"CMAKE_EXECUTABLE" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/CMakeLists.txt",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/resources/xits.qrc",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/resources/firamath.qrc",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/LibTarget.cmake.in",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/readme.txt.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/Users/zhenchen/CLionProjects/CppClion",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/JKQTMathText5_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "JKQTMathText5_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtext.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtmathtext.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtext_imexport.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtmathtext_imexport.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtextlabel.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtmathtextlabel.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtexttools.h",
+			"MU",
+			"EWIEGA46WW/moc_jkqtmathtexttools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextboxinstructionnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextboxinstructionnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextbracenode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextbracenode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextdecoratednode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextdecoratednode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextfracnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextfracnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtexthorizontallistnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtexthorizontallistnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextinstructionnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextinstructionnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextlistnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextlistnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextmatrixnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextmatrixnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextmodifyenvironmentnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextmodifyenvironmentnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnodetools.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextnodetools.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnoopnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextnoopnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsqrtnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextsqrtnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsubsupernode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextsubsupernode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsymbolnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextsymbolnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtexttextnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtexttextnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextverbatimnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextverbatimnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextverticallistnode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextverticallistnode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextwhitespacenode.h",
+			"MU",
+			"HGMM2TZZ6Q/moc_jkqtmathtextwhitespacenode.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/parsers/jkqtmathtextlatexparser.h",
+			"MU",
+			"YRRHDBOT52/moc_jkqtmathtextlatexparser.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/parsers/jkqtmathtextparser.h",
+			"MU",
+			"YRRHDBOT52/moc_jkqtmathtextparser.cpp",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/private/jkqtmathtext_precomp.h",
+			"MU",
+			"PGVKHOT7RA/moc_jkqtmathtext_precomp.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/JKQTMathText5_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/JKQTMathText5_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"JKQTCOMMON_LIB_IN_DLL",
+		"JKQTMATHTEXT_COMPILED_WITH_FIRAMATH",
+		"JKQTMATHTEXT_COMPILED_WITH_XITS",
+		"JKQTMATHTEXT_LIB_EXPORT_LIBRARY",
+		"JKQTMATHTEXT_LIB_IN_DLL",
+		"JKQTMathText5_EXPORTS",
+		"JKQtPlotter_HAS_j0",
+		"JKQtPlotter_HAS_jn",
+		"JKQtPlotter_HAS_y0",
+		"JKQtPlotter_HAS_yn",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext",
+		"/opt/homebrew/Cellar/boost/1.87.0/include",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtcommon",
+		"/opt/anaconda3/include/qt",
+		"/opt/anaconda3/include/qt/QtCore",
+		"/opt/anaconda3/mkspecs/macx-clang",
+		"/opt/anaconda3/include/qt/QtGui",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
+		"/opt/anaconda3/include/qt/QtWidgets",
+		"/opt/anaconda3/include/qt/QtXml",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++",
+		"-std=gnu++11",
+		"-dM",
+		"-E",
+		"-c",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/JKQTMathText5_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/qrc_firamath.cpp",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/qrc_xits.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/CMakeFiles/JKQTMathText5_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/opt/anaconda3/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/opt/anaconda3/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/CMakeFiles/JKQTMathText5_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtext.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtextlabel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtexttools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextboxinstructionnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextbracenode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextdecoratednode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextfracnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtexthorizontallistnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextinstructionnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextmatrixnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextmodifyenvironmentnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnodetools.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextnoopnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsqrtnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsubsupernode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextsymbolnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtexttextnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextverbatimnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextverticallistnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/nodes/jkqtmathtextwhitespacenode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/parsers/jkqtmathtextlatexparser.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-src/lib/jkqtmathtext/parsers/jkqtmathtextparser.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : 
+	[
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/qrc_firamath.cpp",
+		"/Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/_deps/jkqtplotter-build/lib/jkqtmathtext/qrc_xits.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

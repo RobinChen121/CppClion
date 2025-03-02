@@ -2,10 +2,10 @@
 // Created by Zhen Chen on 2025/2/23.
 //
 
-#include "fibonacci_test2.h"
 #include <iostream>
 #include <chrono>
 using namespace std;
+
 
 // Recursive Fibonacci
 long long fibRecursive(int n) {
@@ -24,7 +24,7 @@ long long fibIterative(int n) {
     return a;
 }
 
-int main2() {
+int main() {
     auto start = chrono::high_resolution_clock::now();
     fibRecursive(40);
     auto end = chrono::high_resolution_clock::now();

@@ -12,6 +12,15 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Boost found: /opt/homebrew/Cellar/boost/1.87.0/include
--- Configuring done (0.4s)
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework
+-- Found WrapOpenGL: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (1.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/zhenchen/CLionProjects/CppClion/cmake-build-debug
