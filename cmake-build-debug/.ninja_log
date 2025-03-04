@@ -1,13 +1,13 @@
 # ninja log v6
-7	719	1740918932996884347	CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorDP.cpp.o	9dd0c4e4eb3e9ff7
 793	894	1740255479953105541	cpp_clion	92ee6580784c7669
-10	731	1740918859145693839	CMakeFiles/CppClion.dir/stochastic_inventory/ProbabilityMassFunctions.cpp.o	25b026abcac5c91f
-15	891	1740922612418738087	CMakeFiles/CppClion.dir/main.cpp.o	9a1d90e53c18d6fe
-870	965	1740255133983103120	CPP_mac	4bd14eaf4d1016e3
-4	441	1740922638747246179	build.ninja	3bc74d454ecdd0a8
-891	1069	1740922613294897016	CppClion	476f624e085c294
+16	833	1741044466930696878	CMakeFiles/CppClion.dir/main.cpp.o	bc31e6c806e1bc70
+7	719	1740918932996884347	CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorDP.cpp.o	9dd0c4e4eb3e9ff7
+7	707	1741044425389036691	CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorDPGrok.cpp.o	d5b775a315dc0d1f
 1	8	1740773848518862280	clean	ad90e366ad70d77b
+870	965	1740255133983103120	CPP_mac	4bd14eaf4d1016e3
+2	258	1741079670407609549	build.ninja	3bc74d454ecdd0a8
+3	72	1741043834976430482	CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorC.c.o	eba9d35f84a827f5
 7	721	1740920370516934458	CMakeFiles/CppClion.dir/stochastic_inventory/State.cpp.o	9e8749ee07988aa2
-3	233	1740922638747246179	build.ninja	3bc74d454ecdd0a8
-4	872	1740922638763600897	CMakeFiles/CppClion.dir/main.cpp.o	bc31e6c806e1bc70
-872	970	1740922639631194504	CppClion	5bea0a1bd11b7dc6
+903	1011	1741079610978203029	CppClion	cadaeb9c36c58e66
+10	731	1740918859145693839	CMakeFiles/CppClion.dir/stochastic_inventory/ProbabilityMassFunctions.cpp.o	25b026abcac5c91f
+1	902	1741079610075682578	CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorParallelGrok.cpp.o	bcdf1024eaad4bcd

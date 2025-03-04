@@ -28,8 +28,11 @@ endif ()
 
 #-----------------------------------
 add_executable(${PROJECT_NAME}
-        main.cpp
-        #        stochastic_inventory/NewsvendorDP.cpp
+        #        main.cpp
+        #        stochastic_inventory/NewsvendorC.c
+        stochastic_inventory/NewsvendorParallelGrok.cpp
+        #        stochastic_inventory/NewsvendorGrok.cpp
+        #        stochastic_inventory/Newsvendor.cpp
         #        stochastic_inventory/ProbabilityMassFunctions.cpp
         #        stochastic_inventory/State.cpp
 

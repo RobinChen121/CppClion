@@ -10,7 +10,7 @@ int main() {
   myMap["apple"] = 5;          // 添加 key="apple"，value=5
   myMap.insert({"apple", 10}); // 如果 key 已经存在，insert() 不会修改它的值。
 
-  for (const auto &[fst, snd] : myMap) {
+  for (const auto &[fst, snd] : myMap) { // 用于遍历 map
     std::cout << fst << ": " << snd << std::endl;
   }
   return 0;

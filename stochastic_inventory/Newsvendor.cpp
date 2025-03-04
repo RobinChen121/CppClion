@@ -114,7 +114,7 @@ double NewsvendorDP::recursion(const State &state) {
 
 
 int main() {
-    std::vector<double> demands(30, 20);
+    std::vector<double> demands(10, 20);
     const std::string distribution_type = "poisson";
     constexpr int capacity = 100; // maximum ordering quantity
     constexpr double stepSize = 1.0;

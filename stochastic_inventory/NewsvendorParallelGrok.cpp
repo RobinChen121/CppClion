@@ -1,3 +1,9 @@
+//
+// Created by Zhen Chen on 2025/3/3.
+// parallel computing for newsvendor.
+//
+//
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -11,25 +17,25 @@
 class MultiStageNewsboy {
 private:
     // 参数
-    static const int T = 30; // 时间阶段数
+    static constexpr int T = 30; // 时间阶段数
     static constexpr double C_ORDER = 1.0; // 单位订购成本
     static constexpr double C_HOLDING = 2.0; // 单位持有成本
     static constexpr double C_SHORTAGE = 10.0; // 单位缺货成本
     static constexpr double FIXED_COST = 0.0; // 每次订购的固定成本
-    static const int MAX_INVENTORY = 100; // 最大库存容量
+    static constexpr int MAX_INVENTORY = 100; // 最大库存容量
     static constexpr double DEMAND_LAMBDA = 20.0; // 泊松分布的均值（lambda）
-    static const int NUM_THREADS = 8; // 并行线程数
+    static constexpr int NUM_THREADS = 8; // 并行线程数
 
     std::mutex mtx; // 互斥锁保护共享数据写入
 
     // 泊松分布的 PMF
-    double poissonPMF(int k) const {
-        double logP = -DEMAND_LAMBDA + k * std::log(DEMAND_LAMBDA) - std::lgamma(k + 1);
+    static double poissonPMF(int k) {
+        const double logP = -DEMAND_LAMBDA + k * std::log(DEMAND_LAMBDA) - std::lgamma(k + 1);
         return std::exp(logP);
     }
 
     // 阶段成本的期望值（解析计算）
-    double expectedStageCost(double inventoryBefore, double order) const {
+    static double expectedStageCost(double inventoryBefore, double order) {
         int s = static_cast<int>(std::round(inventoryBefore + order));
         if (s < 0) s = 0;
 
@@ -45,7 +51,7 @@ private:
         }
         shortage *= C_SHORTAGE;
 
-        double orderCost = (order > 0) ? FIXED_COST + C_ORDER * order : 0;
+        const double orderCost = (order > 0) ? FIXED_COST + C_ORDER * order : 0;
         return holding + shortage + orderCost;
     }
 
@@ -57,7 +63,7 @@ private:
             double minCost = std::numeric_limits<double>::infinity();
             int bestOrder = 0;
 
-            int maxOrder = MAX_INVENTORY - std::max(0, i);
+            const int maxOrder = MAX_INVENTORY - std::max(0, i);
 
             for (int order = 0; order <= maxOrder; ++order) {
                 double currentCost = expectedStageCost(i, order);
@@ -114,6 +120,8 @@ public:
                 int endInv = (threadIdx == NUM_THREADS - 1)
                                  ? MAX_INVENTORY + 1
                                  : startInv + invPerThread;
+                // emplace_back 是 std::vector 提供的一个成员函数，用于在向量末尾直接构造一个新对象，
+                // 而不是先创建对象再插入（相比 push_back 更高效）
                 threads.emplace_back(&MultiStageNewsboy::computeStage, this, t, startInv, endInv,
                                      std::ref(result.valueFunction), std::ref(result.policy));
             }
