@@ -2,7 +2,7 @@
 // Created by Zhen Chen on 2025/2/26.
 //
 
-#include "NewsvendorDP.h"
+#include "Newsvendor.h"
 
 #include <chrono>
 #include <iostream>
