@@ -1,3 +1,5 @@
+// 40 periods, maxQ 150, value is 1357.6, time is 10.711s
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -9,12 +11,12 @@
 class MultiStageNewsboy {
 private:
     // 参数
-    static const int T = 30;                  // 时间阶段数
+    static const int T = 40;                  // 时间阶段数
     static constexpr double C_ORDER = 1.0;   // 单位订购成本
     static constexpr double C_HOLDING = 2.0; // 单位持有成本
     static constexpr double C_SHORTAGE = 10.0; // 单位缺货成本
     static constexpr double FIXED_COST = 0.0; // 每次订购的固定成本
-    static const int MAX_INVENTORY = 100;    // 最大库存容量
+    static const int MAX_INVENTORY = 150;    // 最大库存容量
     static constexpr double DEMAND_LAMBDA = 20.0; // 泊松分布的均值（lambda）
 
     // 泊松分布的 PMF 和 CDF

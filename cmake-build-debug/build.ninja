@@ -49,13 +49,13 @@ cmake_ninja_workdir = /Users/zhenchen/CLionProjects/CppClion/cmake-build-debug/
 
 build cmake_object_order_depends_target_CppClion: phony || .
 
-build CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorParallelGrok.cpp.o: CXX_COMPILER__CppClion_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/NewsvendorParallelGrok.cpp || cmake_object_order_depends_target_CppClion
+build CMakeFiles/CppClion.dir/main.cpp.o: CXX_COMPILER__CppClion_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/main.cpp || cmake_object_order_depends_target_CppClion
   DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorParallelGrok.cpp.o.d
+  DEP_FILE = CMakeFiles/CppClion.dir/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -O3 -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/Cellar/boost/1.87.0/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/CppClion.dir
-  OBJECT_FILE_DIR = CMakeFiles/CppClion.dir/stochastic_inventory
+  OBJECT_FILE_DIR = CMakeFiles/CppClion.dir
 
 
 # =============================================================================
@@ -65,7 +65,7 @@ build CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorParallelGrok.cpp.o:
 #############################################
 # Link the executable CppClion
 
-build CppClion: CXX_EXECUTABLE_LINKER__CppClion_Release CMakeFiles/CppClion.dir/stochastic_inventory/NewsvendorParallelGrok.cpp.o | /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_filesystem.dylib /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_system.dylib /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_atomic.dylib /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
+build CppClion: CXX_EXECUTABLE_LINKER__CppClion_Release CMakeFiles/CppClion.dir/main.cpp.o | /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_filesystem.dylib /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_system.dylib /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_atomic.dylib /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
   FLAGS = -O3 -DNDEBUG -O3 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_filesystem.dylib  /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_system.dylib  /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets  /opt/homebrew/Cellar/boost/1.87.0/lib/libboost_atomic.dylib  /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui  -framework AGL  -framework AppKit  -framework OpenGL  -framework ImageIO  -framework Metal  /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -framework UniformTypeIdentifiers
   LINK_PATH = -F/opt/homebrew/lib

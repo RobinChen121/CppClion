@@ -1,0 +1,10 @@
+# ninja log v6
+454	491	1741352698966712067	linear_programming/LP	7b9bd8ed3e542a28
+3	426	1741344690174118336	linear_programming/CMakeFiles/linear_programming.dir/gurobi_test.cpp.o	91bd7b523925cfcb
+4	447	1741350949100120944	CMakeFiles/CppClion.dir/main.cpp.o	6c1650b058218e45
+2	454	1741352698515193339	linear_programming/CMakeFiles/LP.dir/gurobi_test.cpp.o	bcb5829f79b41b70
+447	553	1741350949542892365	CppClion	2b20ba2e290411e2
+2	233	1741353351348120719	build.ninja	b81a0044e1631a44
+426	451	1741344690597474658	linear_programming/liblinear_programming.a	4bea45cf1b8f021a
+3	457	1741353366905289891	linear_programming/CMakeFiles/LP.dir/gurobi_examples/mip1_c++.cpp.o	3eef0d930104e4a0
+457	496	1741353367359656962	linear_programming/LP	68862b897fef15f8

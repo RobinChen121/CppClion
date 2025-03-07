@@ -1,14 +1,15 @@
 //
 // Created by Zhen Chen on 2025/2/26.
+// 40 periods, maxQ 150, value is 1359, time is 4.61s
+// 40 periods, maxQ 100, value is 1351, time is 3.03s
 //
 
 #include "Newsvendor.h"
-
 #include <chrono>
 #include <iostream>
-
 #include "ProbabilityMassFunctions.h"
 #include <limits>
+#include <future>
 
 NewsvendorDP::NewsvendorDP(const size_t T, const int capacity,
                            const double stepSize, const double fixOrderCost,
@@ -107,16 +108,56 @@ double NewsvendorDP::recursion(const State &state) {
             bestQ = action;
         }
     }
-    // cacheActions[state] = bestQ;
+    cacheActions[state] = bestQ;
     cacheValues[state] = bestValue;
+    return bestValue;
+}
+
+// 在recursion函数中使用并行计算
+double NewsvendorDP::recursion_parallel(const State &state) {
+    double bestQ = 0.0;
+    double bestValue = std::numeric_limits<double>::max();
+    const std::vector<double> actions = feasibleActions();
+
+    DpResult result;
+    result.valueFunction.resize(T + 1);
+    result.policy.resize(T);
+
+    // 使用std::vector来存储future对象
+    std::vector<std::future<std::pair<double, double> > > futures;
+
+    for (const double action: actions) {
+        // 使用std::async来并行计算每个action的值
+        double thisValue = 0;
+        for (auto demandAndProb: pmf[state.getPeriod() - 1]) {
+            thisValue += demandAndProb[1] * immediateValueFunction(state, action, demandAndProb[0]);
+            if (state.getPeriod() < T) {
+                auto newState = stateTransitionFunction(state, action, demandAndProb[0]);
+                if (cacheValues.contains(newState)) {
+                    thisValue += demandAndProb[1] * cacheValues[newState];
+                } else {
+                    auto future = std::async(std::launch::async, &NewsvendorDP::recursion_parallel, this, newState);
+                    thisValue += demandAndProb[1] * future.get();
+                }
+            }
+        }
+        if (thisValue < bestValue) {
+            bestValue = thisValue;
+            bestQ = action;
+        }
+    }
+
+    std::lock_guard<std::mutex> lock(cacheMutex);
+    cacheValues[state] = bestValue;
+    cacheActions[state] = bestQ;
     return bestValue;
 }
 
 
 int main() {
-    std::vector<double> demands(10, 20);
+    std::vector<double> demands(40, 20);
     const std::string distribution_type = "poisson";
-    constexpr int capacity = 100; // maximum ordering quantity
+    constexpr int capacity = 150; // maximum ordering quantity
     constexpr double stepSize = 1.0;
     constexpr double fixOrderCost = 0;
     constexpr double unitVariOderCost = 1;
@@ -129,19 +170,31 @@ int main() {
 
     const auto pmf = ProbabilityMassFunctions(truncQuantile, stepSize, distribution_type).getPMF(demands);
     const size_t T = demands.size();
-    auto model = NewsvendorDP(T, capacity, stepSize, fixOrderCost, unitVariOderCost, unitHoldCost, unitPenaltyCost,
-                              truncQuantile, maxI, minI, pmf);
+    auto model1 = NewsvendorDP(T, capacity, stepSize, fixOrderCost, unitVariOderCost, unitHoldCost, unitPenaltyCost,
+                               truncQuantile, maxI, minI, pmf);
 
-    const auto initialState = State(1, 0);
-    const auto start_time = std::chrono::high_resolution_clock::now();
-    const auto optValue = model.recursion(initialState);
-    const auto end_time = std::chrono::high_resolution_clock::now();
-    const std::chrono::duration<double> duration = end_time - start_time;
+    auto initialState = State(1, 0);
+    auto start_time = std::chrono::high_resolution_clock::now();
+    auto optValue = model1.recursion(initialState);
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end_time - start_time;
     std::cout << "planning horizon is " << T << " periods" << std::endl;
-    std::cout << "running time of C++ is " << duration << std::endl;
+    std::cout << "running time of C++ in sequential is " << duration << std::endl;
     std::cout << "Final optimal value is: " << optValue << std::endl;
-    // const auto optQ = model.getOptAction(initialState);
-    // std::cout << "Optimal Q is: " << optQ << std::endl;
-    // auto table = model.getTable();
+
+//    auto model2 = NewsvendorDP(T, capacity, stepSize, fixOrderCost, unitVariOderCost, unitHoldCost, unitPenaltyCost,
+//                               truncQuantile, maxI, minI, pmf);
+//    start_time = std::chrono::high_resolution_clock::now();
+//    optValue = model2.recursion_parallel(initialState);
+//    end_time = std::chrono::high_resolution_clock::now();
+//    duration = end_time - start_time;
+//    std::cout << std::string(30, '*') << std::endl;
+//    std::cout << "planning horizon is " << T << " periods" << std::endl;
+//    std::cout << "running time of C++ in parallel is " << duration << std::endl;
+//    std::cout << "Final optimal value is: " << optValue << std::endl;
+//    const auto optQ = model2.getOptAction(initialState);
+//    std::cout << "Optimal Q is: " << optQ << std::endl;
+//    auto table = model2.getTable();
+
     return 0;
 }

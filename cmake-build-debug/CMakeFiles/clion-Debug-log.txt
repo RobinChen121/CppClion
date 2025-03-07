@@ -1,6 +1,12 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/zhenchen/CLionProjects/CppClion -B /Users/zhenchen/CLionProjects/CppClion/cmake-build-debug
 -- Boost found: /opt/homebrew/Cellar/boost/1.87.0/include
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (0.3s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/zhenchen/CLionProjects/CppClion/cmake-build-debug
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake:233 (message):
+  Could NOT find OpenMP_C (missing: OpenMP_C_FLAGS OpenMP_C_LIB_NAMES)
+Call Stack (most recent call first):
+  /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake:603 (_FPHSA_FAILURE_MESSAGE)
+  /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindOpenMP.cmake:600 (find_package_handle_standard_args)
+  CMakeLists.txt:50 (find_package)
+
+
+-- Configuring incomplete, errors occurred!

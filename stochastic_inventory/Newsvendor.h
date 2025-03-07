@@ -8,6 +8,7 @@
 #include "State.h"
 #include <unordered_map>
 #include <map>
+#include <mutex>
 
 // struct CompareState;
 
@@ -22,17 +23,18 @@ class NewsvendorDP {
     double truncatedQuantile;
     double max_I;
     double min_I;
+    std::mutex cacheMutex; // Mutex to protect access to value_
 
     std::vector<std::vector<std::vector<double> > > pmf;
 
-    // std::unordered_map<State, double> cacheActions{};
-    // std::unordered_map<State, double> cacheValues{};
+    std::unordered_map<State, double> cacheActions{};
+    std::unordered_map<State, double> cacheValues{};
 
     // std::map<State, double, CompareState> cacheActions{};
     // std::map<State, double, CompareState> cacheValues{};
 
-    std::map<State, double> cacheActions{};
-    std::map<State, double> cacheValues{};
+    // std::map<State, double> cacheActions{};
+    // std::map<State, double> cacheValues{};
 
 public:
     NewsvendorDP(size_t T, int capacity, double stepSize, double fixOrderCost, double unitVariOrderCost,
@@ -45,11 +47,18 @@ public:
 
     [[nodiscard]] double immediateValueFunction(const State &state, double action, double demand) const;
 
-    [[nodiscard]] double getOptAction(const State &tate);
+    [[nodiscard]] double getOptAction(const State &state);
 
     [[nodiscard]] auto getTable() const;
 
     double recursion(const State &state);
+
+    double recursion_parallel(const State &state);
+
+    struct DpResult {
+        std::vector<std::map<State, double> > valueFunction; // V[t][inventory]
+        std::vector<std::map<State, double> > policy; // policy[t][inventory]
+    };
 };
 
 // ✅ 自定义比较器，没啥用，不如在 state.h 里面重载 <

@@ -1,8 +1,9 @@
 //
 // Created by Zhen Chen on 2025/3/3.
 // parallel computing for newsvendor.
-//
-//
+// 40 periods, maxQ 150, value is 1351, time is 2.171s.
+// backward recursion, several threads, each thread loops between an invenrory invterval
+// make it easier for parallel computing.
 
 #include <iostream>
 #include <vector>
@@ -17,12 +18,12 @@
 class MultiStageNewsboy {
 private:
     // 参数
-    static constexpr int T = 30; // 时间阶段数
+    static constexpr int T = 40; // 时间阶段数
     static constexpr double C_ORDER = 1.0; // 单位订购成本
     static constexpr double C_HOLDING = 2.0; // 单位持有成本
     static constexpr double C_SHORTAGE = 10.0; // 单位缺货成本
     static constexpr double FIXED_COST = 0.0; // 每次订购的固定成本
-    static constexpr int MAX_INVENTORY = 100; // 最大库存容量
+    static constexpr int MAX_INVENTORY = 150; // 最大库存容量
     static constexpr double DEMAND_LAMBDA = 20.0; // 泊松分布的均值（lambda）
     static constexpr int NUM_THREADS = 8; // 并行线程数
 

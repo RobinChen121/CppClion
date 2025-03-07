@@ -1,5 +1,6 @@
 //
 // Created by Zhen Chen on 2025/3/3.
+// 40 periods, maxQ 150, value is 1351, time is 2.03s.
 //
 
 #include <stdio.h>
@@ -8,12 +9,12 @@
 #include <pthread.h>
 #include <time.h>
 
-#define T 30                    // 时间阶段数
+#define T 40                    // 时间阶段数
 #define C_ORDER 1.0            // 单位订购成本
 #define C_HOLDING 2.0          // 单位持有成本
 #define C_SHORTAGE 10.0        // 单位缺货成本
 #define FIXED_COST 0.0        // 每次订购的固定成本
-#define MAX_INVENTORY 100      // 最大库存容量
+#define MAX_INVENTORY 150      // 最大库存容量
 #define DEMAND_LAMBDA 20.0     // 泊松分布的均值（lambda）
 #define NUM_THREADS 8          // 并行线程数
 
