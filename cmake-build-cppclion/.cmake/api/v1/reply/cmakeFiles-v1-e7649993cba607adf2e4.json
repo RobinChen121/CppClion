@@ -255,6 +255,12 @@
 			"path" : "/opt/homebrew/Cellar/boost/1.87.0/lib/cmake/boost_system-1.87.0/boost_system-config.cmake"
 		},
 		{
+			"path" : "linear_programming/CMakeLists.txt"
+		},
+		{
+			"path" : "junior_practices/CMakeLists.txt"
+		},
+		{
 			"isExternal" : true,
 			"path" : "/opt/homebrew/lib/cmake/Qt6/Qt6ConfigVersion.cmake"
 		},
@@ -1618,9 +1624,6 @@
 		{
 			"isExternal" : true,
 			"path" : "/opt/homebrew/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
-		},
-		{
-			"path" : "linear_programming/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

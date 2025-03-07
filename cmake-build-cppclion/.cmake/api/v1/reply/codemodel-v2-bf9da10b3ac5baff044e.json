@@ -8,12 +8,13 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
-					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.16"
+						"string" : "3.30"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -24,10 +25,10 @@
 				},
 				{
 					"build" : "linear_programming",
-					"jsonFile" : "directory-linear_programming-Release-af924fee6500ca4b4556.json",
+					"jsonFile" : "directory-linear_programming-Debug-af924fee6500ca4b4556.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.16"
+						"string" : "3.30"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
@@ -36,22 +37,39 @@
 					[
 						1
 					]
+				},
+				{
+					"build" : "junior_practices",
+					"jsonFile" : "directory-junior_practices-Debug-b0b7f1cab58da30bdfa5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "junior_practices",
+					"targetIndexes" : 
+					[
+						2
+					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					],
 					"name" : "CppClion",
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -60,15 +78,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CppClion::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CppClion-Release-b3446fe9ac5b10d6ac71.json",
+					"jsonFile" : "target-CppClion-Debug-ea1f951826c0c0bf5728.json",
 					"name" : "CppClion",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "LP::@0cf50210e3523323234e",
-					"jsonFile" : "target-LP-Release-58157449e4711355407d.json",
+					"jsonFile" : "target-LP-Debug-7d5235884f4356bd6b6e.json",
 					"name" : "LP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "junior_practice::@269e48a9846c25342454",
+					"jsonFile" : "target-junior_practice-Debug-27094b8223f9fc8af91a.json",
+					"name" : "junior_practice",
 					"projectIndex" : 0
 				}
 			]

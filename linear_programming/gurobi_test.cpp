@@ -7,13 +7,13 @@
  */
 
 #include <iostream>
-#include "/Library/gurobi1201/macos_universal2/include/gurobi_c++.h"
+#include "gurobi_c++.h"
 
 int main() {
     try {
         // 创建 Gurobi 环境
         GRBEnv env = GRBEnv();
-        env.set(GRB_IntParam_OutputFlag, 1); // 启用输出
+        env.set(GRB_IntParam_OutputFlag, 0); // 启用输出
 
         // 创建模型
         GRBModel model = GRBModel(env);

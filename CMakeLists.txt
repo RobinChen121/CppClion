@@ -4,13 +4,12 @@ project(CppClion)
 
 set(CMAKE_CXX_STANDARD 23)
 
-set(CMAKE_BUILD_TYPE Debug) # 运行 debug
-#-----------------------------------
-# 设置构建类型为 Release, 开启 o2,o3做准备
-set(CMAKE_BUILD_TYPE Release) # 开了这个就不能 debug 了
+set(CMAKE_BUILD_TYPE Debug) # 运行 debug 还是 release
 
 # 修改 Release 模式下的编译选项，强制使用 -O3（你也可以改为 -O2）
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+endif ()
 
 #------------------------
 # 如果 Boost 安装在非标准路径，手动设置 BOOST_ROOT 和相关变量
@@ -25,33 +24,28 @@ if (Boost_FOUND)
 else ()
     message(FATAL_ERROR "Could not find Boost!")
 endif ()
+#target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
 #-----------------------------------
 add_executable(${PROJECT_NAME}
-        main.cpp
+        #        main.cpp
         #        stochastic_inventory/NewsvendorC.c
         #        stochastic_inventory/NewsvendorParallelGrok.cpp
         #        stochastic_inventory/NewsvendorGrok.cpp
         #        stochastic_inventory/Newsvendor.cpp
         #        stochastic_inventory/ProbabilityMassFunctions.cpp
         #        stochastic_inventory/State.cpp
-        #        junior_practices/openMP_test2.cpp
+        junior_practices/fibonacci_test3.cpp
         #        junior_practices/draw_gnuplot.cpp
         #        linear_programming/gurobi_test.cpp
 
 )  # no need to put .h file here
-
-# 查找 Qt6
-find_package(Qt6 REQUIRED COMPONENTS Widgets Gui Core)
-# 链接 Boost, Qt
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} Qt6::Widgets)
 
 #-----------------------------------
 # OpenMP
 # 设置 OpenMP 头文件和库路径
 set(OpenMP_INCLUDE_DIR "/opt/homebrew/Cellar/libomp/20.1.0/include")
 set(OpenMP_LIBRARY "/opt/homebrew/Cellar/libomp/20.1.0/lib/libomp.dylib")
-
 # 手动设置 OpenMP 相关的编译和链接选项
 set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${OpenMP_INCLUDE_DIR}")
 set(OpenMP_CXX_LIBS "-L${OpenMP_LIB_DIR} -lomp")
@@ -61,10 +55,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}") # CMAKE_CXX_FLAGS 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_CXX_LIBS}") # CMAKE_EXE_LINKER_FLAGS 变量用于存储 链接时的额外选项
 # 添加 OpenMP 头文件路径和库路径
 include_directories(${OpenMP_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} ${OpenMP_LIBRARY})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${Boost_LIBRARIES} ${OpenMP_LIBRARY})
 
-# 添加线性规划文件夹
-add_subdirectory(linear_programming) # 告诉 CMake 在小括号那目录下查找 CMakeLists.txt
+# 添加子文件夹
+add_subdirectory(linear_programming) # 告诉 CMake 在小括号那目录下查找 CMakeLists.txtß
+add_subdirectory(junior_practices)
 
 
 ### 查找 Pybind11, 执行 python 代码，很鸡肋，只能弄一些简单的，比较复杂

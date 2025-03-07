@@ -1,6 +1,7 @@
 //
 // Created by Zhen Chen on 2025/2/22.
 //
+// std::async 并行计算没啥优势， 每次递归创建新线程，开销随深度增加。
 
 #include <iostream>
 #include <unordered_map>

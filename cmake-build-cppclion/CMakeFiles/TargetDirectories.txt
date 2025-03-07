@@ -4,3 +4,6 @@
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/CMakeFiles/LP.dir
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/CMakeFiles/edit_cache.dir
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/CMakeFiles/rebuild_cache.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/junior_practice.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/edit_cache.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/rebuild_cache.dir
