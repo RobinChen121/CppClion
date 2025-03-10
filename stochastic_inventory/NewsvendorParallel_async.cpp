@@ -6,10 +6,10 @@
  *
  */
 
-#include "Newsvendor.h"
+#include "newsvendor.h"
 #include <chrono>
 #include <iostream>
-#include "ProbabilityMassFunctions.h"
+#include "PMF.h"
 #include <limits>
 #include <future>
 
@@ -145,7 +145,7 @@ double NewsvendorDP::recursion_parallel(const State &state) {
         }
     }
 
-    std::lock_guard<std::mutex> lock(cacheMutex);
+    std::lock_guard<std::mutex> lock(mtx);
     cacheValues[state] = bestValue;
     cacheActions[state] = bestQ;
     return bestValue;
@@ -153,7 +153,7 @@ double NewsvendorDP::recursion_parallel(const State &state) {
 
 
 int main() {
-    std::vector<double> demands(40, 20);
+    std::vector<double> demands(30, 20);
     const std::string distribution_type = "poisson";
     constexpr int capacity = 100; // maximum ordering quantity
     constexpr double stepSize = 1.0;
@@ -166,7 +166,7 @@ int main() {
     constexpr double minI = -300; // minimum possible inventory
 
 
-    const auto pmf = ProbabilityMassFunctions(truncQuantile, stepSize, distribution_type).getPMF(demands);
+    const auto pmf = PMF(truncQuantile, stepSize, distribution_type).getPMF(demands);
     const size_t T = demands.size();
     auto model1 = NewsvendorDP(T, capacity, stepSize, fixOrderCost, unitVariOderCost, unitHoldCost, unitPenaltyCost,
                                truncQuantile, maxI, minI, pmf);

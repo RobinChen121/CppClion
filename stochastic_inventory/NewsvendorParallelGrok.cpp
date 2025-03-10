@@ -1,9 +1,10 @@
 //
 // Created by Zhen Chen on 2025/3/3.
 // parallel computing for newsvendor.
-// 40 periods, maxQ 150, value is 1351, time is 2.171s.
+// 40 periods, maxQ 150, value is 1351, time is 2.171s.(8 threads)
 // backward recursion, several threads, each thread loops between an invenrory invterval
 // make it easier for parallel computing.
+// 这个程序使用 map 相对于 unordered_map 速度慢了至少1倍
 
 #include <iostream>
 #include <vector>
@@ -123,6 +124,11 @@ public:
                                  : startInv + invPerThread;
                 // emplace_back 是 std::vector 提供的一个成员函数，用于在向量末尾直接构造一个新对象，
                 // 而不是先创建对象再插入（相比 push_back 更高效）
+                // this 表示当前对象的指针，说明这段代码出现在 MultiStageNewsboy 类的一个成员函数中
+                // 在 C++ 中，调用非静态成员函数需要一个对象实例，
+                // 因为成员函数隐式地有一个 this 参数，用于访问对象的成员变量或方法。
+                // std::thread 的构造函数需要一个可调用对象及其参数。
+                // 对于成员函数，第一个参数必须是对象（通过指针或引用传递），这就是为什么需要 this。
                 threads.emplace_back(&MultiStageNewsboy::computeStage, this, t, startInv, endInv,
                                      std::ref(result.valueFunction), std::ref(result.policy));
             }

@@ -7,3 +7,6 @@
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/junior_practice.dir
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/edit_cache.dir
 /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/CMakeFiles/rebuild_cache.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/CMakeFiles/inventory.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/CMakeFiles/edit_cache.dir
+/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/CMakeFiles/rebuild_cache.dir

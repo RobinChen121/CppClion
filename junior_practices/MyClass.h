@@ -13,7 +13,8 @@ private:
 
 public:
   explicit MyClass(int v); // 构造函数声明
-  void showValue() const;  // 成员函数声明
+  void showValue() const; // 成员函数声明
+  friend std::ostream &operator <<(std::ostream &os, const MyClass &c);
 };
 
 #endif // MYCLASS_H

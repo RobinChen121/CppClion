@@ -2,5 +2,7 @@ set(__QT_DEPLOY_TARGET_LP_FILE /Users/zhenchen/CLionProjects/CppClion/cmake-buil
 set(__QT_DEPLOY_TARGET_LP_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_junior_practice_FILE /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/junior_practice)
 set(__QT_DEPLOY_TARGET_junior_practice_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_inventory_FILE /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/inventory)
+set(__QT_DEPLOY_TARGET_inventory_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_CppClion_FILE /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/CppClion)
 set(__QT_DEPLOY_TARGET_CppClion_TYPE EXECUTABLE)

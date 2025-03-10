@@ -19,17 +19,19 @@ main(int argc,
         GRBEnv env = GRBEnv(true);
         env.set("LogFile", "mip1.log");
         env.start();
+        // Start an empty environment. If the environment has already been started, this method will do nothing.
 
         // Create an empty model
         GRBModel model = GRBModel(env);
 
         // Create variables
-        GRBVar x = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "x");
-        GRBVar y = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y");
-        GRBVar z = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z");
+        GRBVar x = model.addVar(0.0, 1.0, 1.0, GRB_BINARY, "x");
+        GRBVar y = model.addVar(0.0, 1.0, 1.0, GRB_BINARY, "y");
+        GRBVar z = model.addVar(0.0, 1.0, 2.0, GRB_BINARY, "z");
 
-        // Set objective: maximize x + y + 2 z
-        model.setObjective(x + y + 2 * z, GRB_MAXIMIZE);
+        // Set objective: maximize x + y + 2 z, 必须在定义变量之后
+        // model.setObjective(x + y + 2 * z, GRB_MAXIMIZE);
+        model.set(GRB_IntAttr_ModelSense, 0); // 这个加上 addVar 中的 obj 系数后，跟 setObjective 等价
 
         // Add constraint: x + 2 y + 3 z <= 4
         model.addConstr(x + 2 * y + 3 * z <= 4, "c0");
@@ -39,6 +41,8 @@ main(int argc,
 
         // Optimize model
         model.optimize();
+
+        model.write("mip1.lp");
 
         cout << x.get(GRB_StringAttr_VarName) << " "
                 << x.get(GRB_DoubleAttr_X) << endl;

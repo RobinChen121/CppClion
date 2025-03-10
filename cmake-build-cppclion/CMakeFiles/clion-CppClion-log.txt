@@ -1,6 +1,5 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/zhenchen/CLionProjects/CppClion -B /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion
--- Boost found: /opt/homebrew/Cellar/boost/1.87.0/include
--- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (0.2s)
+not found
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion

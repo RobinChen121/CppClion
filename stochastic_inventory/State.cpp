@@ -40,21 +40,3 @@ void State::print() const {
 //         return false;
 //     }
 // };
-
-// int main() {
-//     // std::map<State, float, CompareState> stateMap;
-//     // std::unordered_map<State, float> stateMap;
-//     std::map<State, float> stateMap;
-//     stateMap[State(1, 2.0)] = 5.0;
-//     stateMap[State(1, 1.0)] = 3.0;
-//     stateMap[State(1, 3.0)] = 4.0;
-//     stateMap[State(0, 3.0)] = 4.0;
-//     stateMap[State(0, 4.0)] = 4.0;
-//     stateMap[State(0, 3.0)] = 4.0;
-//     stateMap[State(0, 2.0)] = 4.0;
-//
-//     std::cout << stateMap[State(1, 2.0)] << " " << stateMap[State(1, 3.0)] << std::endl;
-//
-//
-//     return 0;
-// }
