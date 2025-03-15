@@ -13,7 +13,8 @@
 // initializing the class
 PMF::PMF(
     const double truncatedQuantile, const double stepSize, std::string distributionName)
-    : truncatedQuantile(truncatedQuantile), stepSize(stepSize), distributionName(std::move(distributionName)) {
+    : truncatedQuantile(truncatedQuantile), stepSize(stepSize),
+      distributionName(std::move(distributionName)) {
     checkName();
 } // std::move for efficiency passing in string and vector
 
@@ -51,7 +52,8 @@ double PMF::poissonCDF(const int k, const double lambda) {
 int PMF::poissonQuantile(const double p, const double lambda) {
     int low = 0, high = std::max(100, static_cast<int>(lambda * 3)); // 初始搜索区间
     while (low < high) {
-        if (const int mid = (low + high) / 2; poissonCDF(mid, lambda) < p) {
+        if (const int mid = (low + high) / 2; poissonCDF(mid, lambda) < p
+        ) {
             low = mid + 1;
         } else {
             high = mid;
@@ -96,8 +98,8 @@ getPMFPoisson(const std::span<double> demands) const {
 
 
 // int main() {
-//     double lambda = 5.0;
-//     double p = 0.9;
+//     const double lambda = 5.0;
+//     const double p = 0.9;
 //
 //     PMF pmf(0.99, 1, "poisson");
 //     const int k = pmf.poissonQuantile(p, lambda);

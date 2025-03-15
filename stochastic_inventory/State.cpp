@@ -10,7 +10,8 @@
 
 State::State() = default;
 
-State::State(const int period, const double initialInventory): period(period), initialInventory(initialInventory) {
+State::State(const int period, const double initialInventory): period(period),
+                                                               initialInventory(initialInventory) {
 };
 
 double State::getInitialInventory() const {
@@ -23,6 +24,24 @@ int State::getPeriod() const {
 
 void State::print() const {
     std::cout << "period: " << period << ", ini I: " << initialInventory << std::endl;
+}
+
+bool State::operator<(const State &other) const {
+    if (period < other.period) {
+        return true;
+    }
+    if (period == other.period) {
+        if (initialInventory < other.initialInventory) {
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+
+std::ostream &operator<<(std::ostream &os, const State &state) {
+    os << "period: " << state.period << ", ini I: " << state.initialInventory << std::endl;
+    return os;
 }
 
 // // ✅ 自定义比较器
@@ -40,3 +59,9 @@ void State::print() const {
 //         return false;
 //     }
 // };
+
+// int main() {
+//     const State state(1, 10);
+//     state.print();
+//     std::cout << state << std::endl;
+// }

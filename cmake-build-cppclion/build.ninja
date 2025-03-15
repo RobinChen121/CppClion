@@ -51,8 +51,8 @@ build cmake_object_order_depends_target_CppClion: phony || .
 
 build CMakeFiles/CppClion.dir/main.cpp.o: CXX_COMPILER__CppClion_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/main.cpp || cmake_object_order_depends_target_CppClion
   DEP_FILE = CMakeFiles/CppClion.dir/main.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/Cellar/libomp/20.1.0/include -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/opt/homebrew/Cellar/libomp/20.1.0/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include/eigen3
   OBJECT_DIR = CMakeFiles/CppClion.dir
   OBJECT_FILE_DIR = CMakeFiles/CppClion.dir
 
@@ -65,8 +65,7 @@ build CMakeFiles/CppClion.dir/main.cpp.o: CXX_COMPILER__CppClion_unscanned_Debug
 # Link the executable CppClion
 
 build CppClion: CXX_EXECUTABLE_LINKER__CppClion_Debug CMakeFiles/CppClion.dir/main.cpp.o
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/Cellar/libomp/20.1.0/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
-  LINK_FLAGS = -L -lomp
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/CppClion.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -110,19 +109,13 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_LP: phony || .
 
-build linear_programming/CMakeFiles/LP.dir/my_solver/Var.cpp.o: CXX_COMPILER__LP_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/linear_programming/my_solver/Var.cpp || cmake_object_order_depends_target_LP
-  DEP_FILE = linear_programming/CMakeFiles/LP.dir/my_solver/Var.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include
+build linear_programming/CMakeFiles/LP.dir/gurobi_examples/mip1_c++.cpp.o: CXX_COMPILER__LP_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/linear_programming/gurobi_examples/mip1_c++.cpp || cmake_object_order_depends_target_LP
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = linear_programming/CMakeFiles/LP.dir/gurobi_examples/mip1_c++.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include -isystem /opt/anaconda3/include
   OBJECT_DIR = linear_programming/CMakeFiles/LP.dir
-  OBJECT_FILE_DIR = linear_programming/CMakeFiles/LP.dir/my_solver
-
-build linear_programming/CMakeFiles/LP.dir/my_solver/Model.cpp.o: CXX_COMPILER__LP_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/linear_programming/my_solver/Model.cpp || cmake_object_order_depends_target_LP
-  DEP_FILE = linear_programming/CMakeFiles/LP.dir/my_solver/Model.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include
-  OBJECT_DIR = linear_programming/CMakeFiles/LP.dir
-  OBJECT_FILE_DIR = linear_programming/CMakeFiles/LP.dir/my_solver
+  OBJECT_FILE_DIR = linear_programming/CMakeFiles/LP.dir/gurobi_examples
 
 
 # =============================================================================
@@ -132,9 +125,9 @@ build linear_programming/CMakeFiles/LP.dir/my_solver/Model.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable linear_programming/LP
 
-build linear_programming/LP: CXX_EXECUTABLE_LINKER__LP_Debug linear_programming/CMakeFiles/LP.dir/my_solver/Var.cpp.o linear_programming/CMakeFiles/LP.dir/my_solver/Model.cpp.o | /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib
+build linear_programming/LP: CXX_EXECUTABLE_LINKER__LP_Debug linear_programming/CMakeFiles/LP.dir/gurobi_examples/mip1_c++.cpp.o | /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libboost_atomic.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
-  LINK_LIBRARIES = /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a  /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib
+  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a  /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libboost_atomic.dylib
   OBJECT_DIR = linear_programming/CMakeFiles/LP.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -166,6 +159,146 @@ build linear_programming/rebuild_cache: phony linear_programming/CMakeFiles/rebu
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
+# /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target utils
+
+
+#############################################
+# Order-only phony target for utils
+
+build cmake_object_order_depends_target_utils: phony || .
+
+build linear_programming/utils/CMakeFiles/utils.dir/Sampling.cpp.o: CXX_COMPILER__utils_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils/Sampling.cpp || cmake_object_order_depends_target_utils
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = linear_programming/utils/CMakeFiles/utils.dir/Sampling.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/anaconda3/include
+  OBJECT_DIR = linear_programming/utils/CMakeFiles/utils.dir
+  OBJECT_FILE_DIR = linear_programming/utils/CMakeFiles/utils.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target utils
+
+
+#############################################
+# Link the executable linear_programming/utils/utils
+
+build linear_programming/utils/utils: CXX_EXECUTABLE_LINKER__utils_Debug linear_programming/utils/CMakeFiles/utils.dir/Sampling.cpp.o | /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libboost_atomic.dylib
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libboost_atomic.dylib
+  OBJECT_DIR = linear_programming/utils/CMakeFiles/utils.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = linear_programming/utils/utils
+  TARGET_PDB = utils.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build linear_programming/utils/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/utils && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build linear_programming/utils/edit_cache: phony linear_programming/utils/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build linear_programming/utils/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/utils && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/zhenchen/CLionProjects/CppClion -B/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build linear_programming/utils/rebuild_cache: phony linear_programming/utils/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target overdraft
+
+
+#############################################
+# Order-only phony target for overdraft
+
+build cmake_object_order_depends_target_overdraft: phony || .
+
+build linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/single_product.cpp.o: CXX_COMPILER__overdraft_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/linear_programming/sddp_overdraft/single_product.cpp || cmake_object_order_depends_target_overdraft
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/single_product.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include -isystem /opt/anaconda3/include
+  OBJECT_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
+  OBJECT_FILE_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
+
+build linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/RemoveDuplicates.cpp.o: CXX_COMPILER__overdraft_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils/RemoveDuplicates.cpp || cmake_object_order_depends_target_overdraft
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/RemoveDuplicates.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include -isystem /opt/anaconda3/include
+  OBJECT_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
+  OBJECT_FILE_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils
+
+build linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/sampling.cpp.o: CXX_COMPILER__overdraft_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils/sampling.cpp || cmake_object_order_depends_target_overdraft
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/sampling.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Library/gurobi1201/macos_universal2/lib -I/Library/gurobi1201/macos_universal2/include -isystem /opt/anaconda3/include
+  OBJECT_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
+  OBJECT_FILE_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target overdraft
+
+
+#############################################
+# Link the executable linear_programming/sddp_overdraft/overdraft
+
+build linear_programming/sddp_overdraft/overdraft: CXX_EXECUTABLE_LINKER__overdraft_Release linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/single_product.cpp.o linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/RemoveDuplicates.cpp.o linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir/__/utils/sampling.cpp.o | /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libboost_atomic.dylib
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /Library/gurobi1201/macos_universal2/lib/libgurobi_c++.a  /Library/gurobi1201/macos_universal2/lib/libgurobi120.dylib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libboost_atomic.dylib
+  OBJECT_DIR = linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = linear_programming/sddp_overdraft/overdraft
+  TARGET_PDB = overdraft.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build linear_programming/sddp_overdraft/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/sddp_overdraft && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build linear_programming/sddp_overdraft/edit_cache: phony linear_programming/sddp_overdraft/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build linear_programming/sddp_overdraft/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/sddp_overdraft && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/zhenchen/CLionProjects/CppClion -B/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build linear_programming/sddp_overdraft/rebuild_cache: phony linear_programming/sddp_overdraft/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
 # /Users/zhenchen/CLionProjects/CppClion/CMakeLists.txt
 # =============================================================================
 
@@ -178,11 +311,11 @@ build linear_programming/rebuild_cache: phony linear_programming/CMakeFiles/rebu
 
 build cmake_object_order_depends_target_junior_practice: phony || .
 
-build junior_practices/CMakeFiles/junior_practice.dir/MyClass.cpp.o: CXX_COMPILER__junior_practice_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/junior_practices/MyClass.cpp || cmake_object_order_depends_target_junior_practice
-  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = junior_practices/CMakeFiles/junior_practice.dir/MyClass.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics -fPIC
-  INCLUDES = -isystem /opt/anaconda3/include -isystem /opt/anaconda3/include/qt -isystem /opt/anaconda3/include/qt/QtWidgets -isystem /opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /opt/anaconda3/include/qt/QtCore -isystem /opt/anaconda3/./mkspecs/macx-clang
+build junior_practices/CMakeFiles/junior_practice.dir/dynamic_2DArray.cpp.o: CXX_COMPILER__junior_practice_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/junior_practices/dynamic_2DArray.cpp || cmake_object_order_depends_target_junior_practice
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DFMT_SHARED -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB
+  DEP_FILE = junior_practices/CMakeFiles/junior_practice.dir/dynamic_2DArray.cpp.o.d
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/Cellar/libomp/20.1.0/include -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics -fPIC
+  INCLUDES = -I/opt/homebrew/Cellar/libomp/20.1.0/include -isystem /opt/anaconda3/include -isystem /opt/anaconda3/include/qt -isystem /opt/anaconda3/include/qt/QtWidgets -isystem /opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /opt/anaconda3/include/qt/QtCore -isystem /opt/anaconda3/./mkspecs/macx-clang -isystem /opt/homebrew/include/eigen3
   OBJECT_DIR = junior_practices/CMakeFiles/junior_practice.dir
   OBJECT_FILE_DIR = junior_practices/CMakeFiles/junior_practice.dir
 
@@ -194,9 +327,10 @@ build junior_practices/CMakeFiles/junior_practice.dir/MyClass.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable junior_practices/junior_practice
 
-build junior_practices/junior_practice: CXX_EXECUTABLE_LINKER__junior_practice_Debug junior_practices/CMakeFiles/junior_practice.dir/MyClass.cpp.o | /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libQt5Widgets.5.15.2.dylib /opt/anaconda3/lib/libboost_atomic.dylib /opt/anaconda3/lib/libQt5Gui.5.15.2.dylib /opt/anaconda3/lib/libQt5Core.5.15.2.dylib
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libQt5Widgets.5.15.2.dylib  /opt/anaconda3/lib/libboost_atomic.dylib  /opt/anaconda3/lib/libQt5Gui.5.15.2.dylib  /opt/anaconda3/lib/libQt5Core.5.15.2.dylib
+build junior_practices/junior_practice: CXX_EXECUTABLE_LINKER__junior_practice_Debug junior_practices/CMakeFiles/junior_practice.dir/dynamic_2DArray.cpp.o | /opt/homebrew/Cellar/libomp/20.1.0/lib/libomp.dylib /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libQt5Widgets.5.15.2.dylib /opt/anaconda3/lib/libspdlog.1.15.1.dylib /opt/anaconda3/lib/libboost_atomic.dylib /opt/anaconda3/lib/libQt5Gui.5.15.2.dylib /opt/anaconda3/lib/libQt5Core.5.15.2.dylib /opt/anaconda3/lib/libfmt.11.0.2.dylib
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/Cellar/libomp/20.1.0/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
+  LINK_FLAGS = -L -lomp
+  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /opt/homebrew/Cellar/libomp/20.1.0/lib/libomp.dylib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libQt5Widgets.5.15.2.dylib  /opt/anaconda3/lib/libspdlog.1.15.1.dylib  /opt/anaconda3/lib/libboost_atomic.dylib  /opt/anaconda3/lib/libQt5Gui.5.15.2.dylib  /opt/anaconda3/lib/libQt5Core.5.15.2.dylib  /opt/anaconda3/lib/libfmt.11.0.2.dylib
   OBJECT_DIR = junior_practices/CMakeFiles/junior_practice.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -240,26 +374,26 @@ build junior_practices/rebuild_cache: phony junior_practices/CMakeFiles/rebuild_
 
 build cmake_object_order_depends_target_inventory: phony || .
 
-build stochastic_inventory/CMakeFiles/inventory.dir/NewsvendorParallel.cpp.o: CXX_COMPILER__inventory_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/NewsvendorParallel.cpp || cmake_object_order_depends_target_inventory
-  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
-  DEP_FILE = stochastic_inventory/CMakeFiles/inventory.dir/NewsvendorParallel.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+build stochastic_inventory/CMakeFiles/inventory.dir/newsvendor.cpp.o: CXX_COMPILER__inventory_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/newsvendor.cpp || cmake_object_order_depends_target_inventory
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
+  DEP_FILE = stochastic_inventory/CMakeFiles/inventory.dir/newsvendor.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/anaconda3/include
   OBJECT_DIR = stochastic_inventory/CMakeFiles/inventory.dir
   OBJECT_FILE_DIR = stochastic_inventory/CMakeFiles/inventory.dir
 
 build stochastic_inventory/CMakeFiles/inventory.dir/PMF.cpp.o: CXX_COMPILER__inventory_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/PMF.cpp || cmake_object_order_depends_target_inventory
-  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
   DEP_FILE = stochastic_inventory/CMakeFiles/inventory.dir/PMF.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/anaconda3/include
   OBJECT_DIR = stochastic_inventory/CMakeFiles/inventory.dir
   OBJECT_FILE_DIR = stochastic_inventory/CMakeFiles/inventory.dir
 
 build stochastic_inventory/CMakeFiles/inventory.dir/State.cpp.o: CXX_COMPILER__inventory_unscanned_Release /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/State.cpp || cmake_object_order_depends_target_inventory
-  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB
   DEP_FILE = stochastic_inventory/CMakeFiles/inventory.dir/State.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/anaconda3/include
   OBJECT_DIR = stochastic_inventory/CMakeFiles/inventory.dir
   OBJECT_FILE_DIR = stochastic_inventory/CMakeFiles/inventory.dir
@@ -272,9 +406,9 @@ build stochastic_inventory/CMakeFiles/inventory.dir/State.cpp.o: CXX_COMPILER__i
 #############################################
 # Link the executable stochastic_inventory/inventory
 
-build stochastic_inventory/inventory: CXX_EXECUTABLE_LINKER__inventory_Release stochastic_inventory/CMakeFiles/inventory.dir/NewsvendorParallel.cpp.o stochastic_inventory/CMakeFiles/inventory.dir/PMF.cpp.o stochastic_inventory/CMakeFiles/inventory.dir/State.cpp.o | /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libboost_atomic.dylib
+build stochastic_inventory/inventory: CXX_EXECUTABLE_LINKER__inventory_Release stochastic_inventory/CMakeFiles/inventory.dir/newsvendor.cpp.o stochastic_inventory/CMakeFiles/inventory.dir/PMF.cpp.o stochastic_inventory/CMakeFiles/inventory.dir/State.cpp.o | /opt/anaconda3/lib/libboost_system.dylib /opt/anaconda3/lib/libboost_thread.dylib /opt/anaconda3/lib/libboost_filesystem.dylib /opt/anaconda3/lib/libboost_atomic.dylib
   FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libboost_atomic.dylib
+  LINK_LIBRARIES = -Wl,-rpath,/opt/anaconda3/lib  /opt/anaconda3/lib/libboost_system.dylib  /opt/anaconda3/lib/libboost_thread.dylib  /opt/anaconda3/lib/libboost_filesystem.dylib  /opt/anaconda3/lib/libboost_atomic.dylib
   OBJECT_DIR = stochastic_inventory/CMakeFiles/inventory.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -305,13 +439,84 @@ build stochastic_inventory/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build stochastic_inventory/rebuild_cache: phony stochastic_inventory/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cash-sdp
+
+
+#############################################
+# Order-only phony target for cash-sdp
+
+build cmake_object_order_depends_target_cash-sdp: phony || .
+
+build stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/strongConstraint.cpp.o: CXX_COMPILER__cash-sdp_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/cash/strongConstraint.cpp || cmake_object_order_depends_target_cash-sdp
+  DEP_FILE = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/strongConstraint.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir
+  OBJECT_FILE_DIR = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir
+
+build stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/__/state.cpp.o: CXX_COMPILER__cash-sdp_unscanned_Debug /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/state.cpp || cmake_object_order_depends_target_cash-sdp
+  DEP_FILE = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/__/state.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir
+  OBJECT_FILE_DIR = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/__
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cash-sdp
+
+
+#############################################
+# Link the executable stochastic_inventory/cash/cash-sdp
+
+build stochastic_inventory/cash/cash-sdp: CXX_EXECUTABLE_LINKER__cash-sdp_Debug stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/strongConstraint.cpp.o stochastic_inventory/cash/CMakeFiles/cash-sdp.dir/__/state.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
+  OBJECT_DIR = stochastic_inventory/cash/CMakeFiles/cash-sdp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = stochastic_inventory/cash/cash-sdp
+  TARGET_PDB = cash-sdp.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build stochastic_inventory/cash/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/cash && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build stochastic_inventory/cash/edit_cache: phony stochastic_inventory/cash/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build stochastic_inventory/cash/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/cash && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/zhenchen/CLionProjects/CppClion -B/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build stochastic_inventory/cash/rebuild_cache: phony stochastic_inventory/cash/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build LP: phony linear_programming/LP
 
+build cash-sdp: phony stochastic_inventory/cash/cash-sdp
+
 build inventory: phony stochastic_inventory/inventory
 
 build junior_practice: phony junior_practices/junior_practice
+
+build overdraft: phony linear_programming/sddp_overdraft/overdraft
+
+build utils: phony linear_programming/utils/utils
 
 # =============================================================================
 # Folder targets.
@@ -335,14 +540,35 @@ build junior_practices/all: phony junior_practices/junior_practice
 #############################################
 # Folder: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming
 
-build linear_programming/all: phony linear_programming/LP
+build linear_programming/all: phony linear_programming/LP linear_programming/utils/all linear_programming/sddp_overdraft/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/sddp_overdraft
+
+build linear_programming/sddp_overdraft/all: phony linear_programming/sddp_overdraft/overdraft
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/utils
+
+build linear_programming/utils/all: phony linear_programming/utils/utils
 
 # =============================================================================
 
 #############################################
 # Folder: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory
 
-build stochastic_inventory/all: phony stochastic_inventory/inventory
+build stochastic_inventory/all: phony stochastic_inventory/inventory stochastic_inventory/cash/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/cash
+
+build stochastic_inventory/cash/all: phony stochastic_inventory/cash/cash-sdp
 
 # =============================================================================
 # Built-in targets
@@ -351,14 +577,14 @@ build stochastic_inventory/all: phony stochastic_inventory/inventory
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/zhenchen/CLionProjects/CppClion/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/junior_practices/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/CMakeLists.txt /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfigVersion.cmake /opt/anaconda3/lib/cmake/BoostDetectToolset-1.82.0.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config-version.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-static.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config-version.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-static.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config-version.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config-version.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-static.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config-version.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-static.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake /opt/homebrew/share/eigen3/cmake/Eigen3ConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/zhenchen/CLionProjects/CppClion/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/junior_practices/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/sddp_overdraft/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/cash/CMakeLists.txt /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfigVersion.cmake /opt/anaconda3/lib/cmake/BoostDetectToolset-1.82.0.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config-version.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-static.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config-version.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-static.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config-version.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config-version.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-static.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config-version.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-static.cmake /opt/anaconda3/lib/cmake/fmt/fmt-config-version.cmake /opt/anaconda3/lib/cmake/fmt/fmt-config.cmake /opt/anaconda3/lib/cmake/fmt/fmt-targets-release.cmake /opt/anaconda3/lib/cmake/fmt/fmt-targets.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfig.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigTargets-release.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigTargets.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake /opt/homebrew/share/eigen3/cmake/Eigen3ConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/zhenchen/CLionProjects/CppClion/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/junior_practices/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/CMakeLists.txt /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfigVersion.cmake /opt/anaconda3/lib/cmake/BoostDetectToolset-1.82.0.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config-version.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-static.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config-version.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-static.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config-version.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config-version.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-static.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config-version.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-static.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake /opt/homebrew/share/eigen3/cmake/Eigen3ConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/zhenchen/CLionProjects/CppClion/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/junior_practices/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/sddp_overdraft/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/CMakeLists.txt /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory/cash/CMakeLists.txt /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake /opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfigVersion.cmake /opt/anaconda3/lib/cmake/BoostDetectToolset-1.82.0.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake /opt/anaconda3/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config-version.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/boost_atomic-config.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_atomic-1.82.0/libboost_atomic-variant-static.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config-version.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/libboost_filesystem-variant-static.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config-version.cmake /opt/anaconda3/lib/cmake/boost_headers-1.82.0/boost_headers-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config-version.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/boost_system-config.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_system-1.82.0/libboost_system-variant-static.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config-version.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/boost_thread-config.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-shared.cmake /opt/anaconda3/lib/cmake/boost_thread-1.82.0/libboost_thread-variant-static.cmake /opt/anaconda3/lib/cmake/fmt/fmt-config-version.cmake /opt/anaconda3/lib/cmake/fmt/fmt-config.cmake /opt/anaconda3/lib/cmake/fmt/fmt-targets-release.cmake /opt/anaconda3/lib/cmake/fmt/fmt-targets.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfig.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigTargets-release.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigTargets.cmake /opt/anaconda3/lib/cmake/spdlog/spdlogConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake /opt/homebrew/share/eigen3/cmake/Eigen3ConfigVersion.cmake /opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
 
 
 #############################################

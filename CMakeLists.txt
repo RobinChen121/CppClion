@@ -1,7 +1,11 @@
 
 cmake_minimum_required(VERSION 3.30)
 project(CppClion)
-set(CMAKE_CXX_STANDARD 23)
+
+# 使用 Conan 生成的 CMake 配置
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/build/conan_toolchain.cmake)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 添加子文件夹
 add_subdirectory(linear_programming) # 告诉 CMake 在小括号那目录下查找 CMakeLists.txtß
@@ -21,6 +25,8 @@ add_executable(${PROJECT_NAME}
 
 )  # no need to put .h file here
 
+find_package(Eigen3 REQUIRED)
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 
 #------------------------
 # 如果 Boost 安装在非标准路径，手动设置 BOOST_ROOT 和相关变量
@@ -39,21 +45,6 @@ add_executable(${PROJECT_NAME}
 
 
 #-----------------------------------
-# OpenMP
-# 设置 OpenMP 头文件和库路径
-set(OpenMP_INCLUDE_DIR "/opt/homebrew/Cellar/libomp/20.1.0/include")
-set(OpenMP_LIBRARY "/opt/homebrew/Cellar/libomp/20.1.0/lib/libomp.dylib")
-# 手动设置 OpenMP 相关的编译和链接选项
-set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${OpenMP_INCLUDE_DIR}")
-set(OpenMP_CXX_LIBS "-L${OpenMP_LIB_DIR} -lomp")
-# 应用 OpenMP 选项
-# 这两行命令使得运行当前并行计算 cpp 等同于在命令行中的设置
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}") # CMAKE_CXX_FLAGS 变量用于存储 C++ 编译器的全局编译选项（flags）
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_CXX_LIBS}") # CMAKE_EXE_LINKER_FLAGS 变量用于存储 链接时的额外选项
-# 添加 OpenMP 头文件路径和库路径
-include_directories(${OpenMP_INCLUDE_DIR})
-
-
 ## 查找 Pybind11, 执行 python 代码，很鸡肋，只能弄一些简单的，比较复杂
 ## 查找 JKQTPlotter, 无法运行
 

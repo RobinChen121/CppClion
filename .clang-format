@@ -1,4 +1,4 @@
 # .clang-format 文件示例
 BasedOnStyle: LLVM
-IndentWidth: 4  # 设置每个缩进级别为 4 个空格
+IndentWidth: 2  # 设置每个缩进级别为 4 个空格
 UseTab: Never    # 禁止使用制表符(Tab)，确保使用空格

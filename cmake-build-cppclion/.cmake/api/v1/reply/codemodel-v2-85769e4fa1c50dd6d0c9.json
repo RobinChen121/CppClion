@@ -1,0 +1,219 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "linear_programming",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"jsonFile" : "directory-linear_programming-Debug-af924fee6500ca4b4556.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "linear_programming",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "linear_programming/utils",
+					"jsonFile" : "directory-linear_programming.utils-Debug-3b85623d2ea4585a5b4d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "linear_programming/utils",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "linear_programming/sddp_overdraft",
+					"jsonFile" : "directory-linear_programming.sddp_overdraft-Debug-d62b948549a01892c7e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "linear_programming/sddp_overdraft",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "junior_practices",
+					"jsonFile" : "directory-junior_practices-Debug-b0b7f1cab58da30bdfa5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "junior_practices",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "stochastic_inventory",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-stochastic_inventory-Debug-e3c48947aed8bf5dab27.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "stochastic_inventory",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "stochastic_inventory/cash",
+					"jsonFile" : "directory-stochastic_inventory.cash-Debug-11e24172bc8a50ca071f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 0,
+					"source" : "stochastic_inventory/cash",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "CppClion",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CppClion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CppClion-Debug-e7158de57f90d9990239.json",
+					"name" : "CppClion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "LP::@0cf50210e3523323234e",
+					"jsonFile" : "target-LP-Debug-a84794d30f8cfd2d0ac4.json",
+					"name" : "LP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "cash-sdp::@686179159669958344ec",
+					"jsonFile" : "target-cash-sdp-Debug-abb468fc2cd6c5b3162a.json",
+					"name" : "cash-sdp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "inventory::@8359d8b257de3d65d78b",
+					"jsonFile" : "target-inventory-Debug-6fcd5620f89431f2e09a.json",
+					"name" : "inventory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "junior_practice::@269e48a9846c25342454",
+					"jsonFile" : "target-junior_practice-Debug-2aa03a9624d8bcf889f1.json",
+					"name" : "junior_practice",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "overdraft::@b91144f6cfd2f2b0eb77",
+					"jsonFile" : "target-overdraft-Debug-6f55be1a0c63b32020b8.json",
+					"name" : "overdraft",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "utils::@1afb5aa0c2a0484c23d4",
+					"jsonFile" : "target-utils-Debug-72fab91e69bac4610f3f.json",
+					"name" : "utils",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion",
+		"source" : "/Users/zhenchen/CLionProjects/CppClion"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
