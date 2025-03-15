@@ -1,1 +1,1 @@
-A C++ project by the IDE Clion.
+Solve some operations research problems by C++.
