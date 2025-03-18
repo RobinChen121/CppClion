@@ -3,7 +3,7 @@ set(RUN_NAME junior_practice) # 设置运行程序的名字
 # 创建可执行程序，需要运行的 cpp 文件放在这里
 add_executable(${RUN_NAME}
         #        MyClass.cpp
-        dynamic_2DArray.cpp
+        sets_test.cpp
 )
 
 # 查找 Qt5

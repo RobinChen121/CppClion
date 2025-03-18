@@ -6,12 +6,13 @@
  * removing.
  *
  */
-#include "../utils/RemoveDuplicates.h"
-#include "../utils/Sampling.h"
+#include "../../utils/RemoveDuplicates.h"
+#include "../../utils/Sampling.h"
 #include "gurobi_c++.h"
 
 #include <iomanip> // for precision
 #include <numeric>
+#include <unordered_set>
 #include <vector>
 
 class SingleProduct {
@@ -19,8 +20,8 @@ private:
   // problem settings
   double iniI = 0;
   double iniCash = 0;
-  std::vector<double> meanDemands = {10, 20, 10,
-                                     20}; // std::vector<double>(4, 15);
+  std::vector<double> meanDemands = {15, 15, 15,
+                                     15}; // std::vector<double>(4, 15);
   std::string distribution_name = "poisson";
   size_t T = meanDemands.size();
   std::vector<double> unitVariOderCosts = std::vector<double>(T, 1);
@@ -176,9 +177,7 @@ void SingleProduct::solve() const {
           cutCoefficients[n][3] = intercepts[iter - 1][t][n];
         };
 
-        for (auto finalCoefficients =
-                 removeDuplicateRows(cutCoefficients); // cutCoefficients
-             auto &finalCoefficient : finalCoefficients) {
+        for (auto &finalCoefficient : cutCoefficients) {
           models[t].addConstr(
               theta[t] >=
               finalCoefficient[0] * (I[t - 1] + q_pre[t - 1]) +
@@ -265,9 +264,6 @@ void SingleProduct::solve() const {
                 r0 * W0[t] + theta[t]);
             models[t].getConstr(1).set(GRB_DoubleAttr_RHS, rhs2);
             models[t].getConstr(2).set(GRB_DoubleAttr_RHS, rhs3);
-            if (iter == 4 and t == 1) {
-              ;
-            }
           } else
             models[t].setObjective(-prices[t - 1] * (demand - B[t - 1]) -
                                    unitSalvageValue * I[t - 1]);

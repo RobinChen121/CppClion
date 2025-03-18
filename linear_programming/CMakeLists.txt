@@ -1,6 +1,5 @@
 set(RUN_NAME LP) # 设置运行程序的名字
 
-add_subdirectory(utils)
 add_subdirectory(sddp_overdraft)
 
 # 创建可执行程序，需要运行的 cpp 文件放在这里

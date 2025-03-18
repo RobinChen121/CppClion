@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhenchen/CLionProjects/CppClion/linear_programming/utils
+# Install script for directory: /Users/zhenchen/CLionProjects/CppOR/linear_programming/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

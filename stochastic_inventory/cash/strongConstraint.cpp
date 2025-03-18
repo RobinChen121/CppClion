@@ -1,13 +1,15 @@
 /*
  * Created by Zhen Chen on 2025/3/13.
  * Email: chen.zhen5526@gmail.com
- * Description:
+ * Description: 6 periods running time 12.91s, while java is 20.28s on mac book
+ * pro m1.
  *
  *
  */
 
-#include "../PMF.h"
-#include "CashState.h"
+#include "../../utils/PMF.h"
+#include "../states/CashState.h"
+#include <chrono>
 #include <cstddef> // for size_t
 #include <iostream>
 #include <ostream>
@@ -18,26 +20,27 @@ private:
   double ini_inventory = 0;
   double ini_cash = 100;
   CashState ini_state = CashState(1, ini_inventory, ini_cash);
-  std::vector<double> demands = {20, 20, 20};
+  std::vector<double> demands = {10, 10, 10, 10};
   std::string distribution_type = "poisson";
   size_t T = demands.size(); // 直接获取大小
-  double capacity = 100;
-  double step_size = 1;
-  std::vector<double> fixed_order_costs = std::vector<double>(T, 100.0);
-  std::vector<double> unit_vari_order_costs = std::vector<double>(T, 10.0);
-  std::vector<double> unit_hold_costs = std::vector<double>(T, 1.0);
+
   std::vector<double> prices = std::vector<double>(T, 10.0);
+  std::vector<double> fixed_order_costs = std::vector<double>(T, 0.0);
+  std::vector<double> unit_vari_order_costs = std::vector<double>(T, 1.0);
+  std::vector<double> unit_hold_costs = std::vector<double>(T, 0.0);
   std::vector<double> overhead_costs = std::vector<double>(T, 0.0);
   double unit_salvage_value = 0.5;
   double deposit_rate = 0; // deposit interest rate
 
+  double step_size = 1;
+  double order_capacity = 100;
   double truncated_quantile = 0.9999;
   double max_inventory = 200;
   double min_inventory = 0;
-  double max_cash = 5000;
+  double max_cash = 2000;
   double min_cash = 0;
 
-  const auto pmf =
+  const std::vector<std::vector<std::vector<double>>> pmf =
       PMF(truncated_quantile, step_size, distribution_type).getPMF(demands);
   std::unordered_map<CashState, double> cacheActions;
   std::unordered_map<CashState, double> cacheValues;
@@ -47,7 +50,7 @@ public:
   feasibleActions(const CashState &state) const {
     const double cashQ =
         state.getIniCash() / unit_vari_order_costs[state.getPeriod()];
-    const double QBound = std::min(capacity, cashQ);
+    const double QBound = std::min(order_capacity, cashQ);
     const int QNum = static_cast<int>(QBound / step_size);
 
     std::vector<double> actions(QNum);
@@ -57,8 +60,9 @@ public:
     return actions;
   }
 
-  CashState stateTransitionFunction(const CashState &state, const double action,
-                                    const double randomDemand) {
+  [[nodiscard]] CashState
+  stateTransitionFunction(const CashState &state, const double action,
+                          const double randomDemand) const {
     double nextInventory =
         std::max(0.0, state.getInitialInventory() + action - randomDemand);
     double nextCash = state.getIniCash() +
@@ -75,12 +79,14 @@ public:
     return CashState{state.getPeriod() + 1, nextInventory, nextCash};
   }
 
-  double immediateValueFunction(const CashState &state, const double action,
-                                const double randomDemand) {
+  [[nodiscard]] double immediateValueFunction(const CashState &state,
+                                              const double action,
+                                              const double randomDemand) const {
     int t = state.getPeriod() - 1;
-    double revenue = prices[t] * std::min(state.getInitialInventory() + action,
-                                          randomDemand);
-    const double fixedCost = action > 0 ? fixed_order_costs : 0;
+    const double revenue =
+        prices[t] *
+        std::min(state.getInitialInventory() + action, randomDemand);
+    const double fixedCost = action > 0 ? fixed_order_costs[t] : 0;
     const double variableCost = unit_vari_order_costs[t] * action;
     const double deposit =
         (state.getIniCash() - fixedCost - variableCost) * (1 + deposit_rate);
@@ -94,13 +100,12 @@ public:
             ? unit_salvage_value * std::max(inventoryLevel, 0.0)
             : 0;
     cash_increment += salValue;
-    double endCash = state.getIniCash() + cash_increment;
     return cash_increment;
   }
 
-  double recursion(const CashState &state) {
+  double recursion(const CashState &state) { // NOLINT(*-no-recursion)
     double bestQ = 0.0;
-    double bestValue = std::numeric_limits<double>::min();
+    double bestValue = std::numeric_limits<double>::lowest();
     for (const std::vector<double> actions = feasibleActions(state);
          const double action : actions) {
       double thisValue = 0;
@@ -133,6 +138,10 @@ public:
 
 int main() {
   auto strongConstraint = StrongConstraint();
-  std::cout << "Final expected cash balance is " << strongConstraint.solve()
-            << std::endl;
+  const auto start_time = std::chrono::high_resolution_clock::now();
+  const double final_value = strongConstraint.solve();
+  const auto end_time = std::chrono::high_resolution_clock::now();
+  const std::chrono::duration<double> duration = end_time - start_time;
+  std::cout << "running time is " << duration << std::endl;
+  std::cout << "Final expected cash increment is " << final_value << std::endl;
 }

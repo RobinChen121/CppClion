@@ -12,8 +12,8 @@ set(CMAKE_BUILD_TYPE Release) # 运行 Debug 还是 Release
 add_executable(${RUN_NAME}
         #        NewsvendorParallel.cpp
         newsvendor.cpp
-        PMF.cpp
-        State.cpp
+        ../utils/PMF.cpp
+        states/State.cpp
         #        cash/CashState.cpp
 )
 

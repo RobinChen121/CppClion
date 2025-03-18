@@ -51,8 +51,8 @@ protected:
 
         this->render(&pixmap);
 
-        pixmap.save("/Users/zhenchen/CLionProjects/CppClion/barchart.png");
-//        pixmap.save("/Users/zhenchen/CLionProjects/CppClion/barchart.png", "PNG")
+        pixmap.save("/Users/zhenchen/CLionProjects/CppOR/barchart.png");
+//        pixmap.save("/Users/zhenchen/CLionProjects/CppOR/barchart.png", "PNG")
     }
 };
 

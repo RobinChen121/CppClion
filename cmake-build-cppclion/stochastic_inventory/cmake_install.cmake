@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhenchen/CLionProjects/CppClion/stochastic_inventory
+# Install script for directory: /Users/zhenchen/CLionProjects/CppOR/stochastic_inventory
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/cash/cmake_install.cmake")
+  include("/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/stochastic_inventory/cash/cmake_install.cmake")
 endif()
 

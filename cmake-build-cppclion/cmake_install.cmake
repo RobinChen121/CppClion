@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhenchen/CLionProjects/CppClion
+# Install script for directory: /Users/zhenchen/CLionProjects/CppOR
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,17 +39,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/linear_programming/cmake_install.cmake")
+  include("/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/junior_practices/cmake_install.cmake")
+  include("/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/junior_practices/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/stochastic_inventory/cmake_install.cmake")
+  include("/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/stochastic_inventory/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/utils/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -67,6 +72,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/Users/zhenchen/CLionProjects/CppClion/cmake-build-cppclion/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
