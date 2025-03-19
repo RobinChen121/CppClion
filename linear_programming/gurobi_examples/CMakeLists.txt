@@ -1,14 +1,9 @@
-set(RUN_NAME LP) # 设置运行程序的名字
+set(RUN_NAME gurobi_example) # 设置运行程序的名字
 
-add_subdirectory(sddp_overdraft)
-add_subdirectory(gurobi_examples)
 
 # 创建可执行程序，需要运行的 cpp 文件放在这里
 add_executable(${RUN_NAME}
-        #        gurobi_test.cpp
-        gurobi_examples/mip1_c++.cpp
-        #        my_solver/Var.cpp
-        #        my_solver/Model.cpp
+        mip1_c++.cpp
 )
 
 # 设置 Gurobi 路径（根据你的安装调整）

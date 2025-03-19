@@ -6,13 +6,12 @@
  * removing.
  *
  */
-#include "../../utils/RemoveDuplicates.h"
-#include "../../utils/Sampling.h"
+// #include "../../utils/Sampling.h"
 #include "gurobi_c++.h"
 
-#include <iomanip> // for precision
+// #include <iomanip> // for precision
 #include <numeric>
-#include <unordered_set>
+// #include <unordered_set>
 #include <vector>
 
 class SingleProduct {
@@ -23,7 +22,7 @@ private:
   std::vector<double> meanDemands = {15, 15, 15,
                                      15}; // std::vector<double>(4, 15);
   std::string distribution_name = "poisson";
-  size_t T = meanDemands.size();
+  size_t T = 3; // meanDemands.size();
   std::vector<double> unitVariOderCosts = std::vector<double>(T, 1);
   std::vector<double> prices = std::vector<double>(T, 10);
   double unitSalvageValue = 0.5;
@@ -34,8 +33,8 @@ private:
   double overdraftLimit = 500;
 
   // sddp settings
-  int sampleNum = 10;
-  int forwardNum = 20;
+  int sampleNum = 2;  // 10;
+  int forwardNum = 8; // 20;
   int iterNum = 30;
   double thetaInitialValue = -500;
 
@@ -46,14 +45,14 @@ public:
 void SingleProduct::solve() const {
   const std::vector<int> sampleNums(T, sampleNum);
   std::vector<std::vector<double>> sampleDetails(T);
-  for (int t = 0; t < T; t++) {
-    sampleDetails[t].resize(sampleNums[t]);
-    auto sampling = Sampling(distribution_name, meanDemands[t]);
-    sampleDetails[t] = sampling.generateSamples(sampleNums[t]);
-  }
-  // sampleDetails = {{5, 15}, {5, 15}, {5, 15}};
+  // for (int t = 0; t < T; t++) {
+  //   sampleDetails[t].resize(sampleNums[t]);
+  //   auto sampling = Sampling(distribution_name, meanDemands[t]);
+  //   sampleDetails[t] = sampling.generateSamples(sampleNums[t]);
+  // }
+  sampleDetails = {{5, 15}, {5, 15}, {5, 15}};
 
-  // 创建 Gurobi 环境与模型
+  // gurobi environments and model
   GRBEnv env;
   env.set(GRB_IntParam_OutputFlag, 0);
   std::vector<GRBModel> models(T + 1, GRBModel(env));
@@ -61,7 +60,7 @@ void SingleProduct::solve() const {
   // decision variables
   std::vector<GRBVar> q(T);
   std::vector<GRBVar> q_pre(T);
-  std::vector<GRBVar> theta(T - 1);
+  std::vector<GRBVar> theta(T);
   std::vector<GRBVar> I(T);
   std::vector<GRBVar> B(T);
   std::vector<GRBVar> cash(T);
@@ -124,19 +123,19 @@ void SingleProduct::solve() const {
   double slopes1[iterNum][T][forwardNum];
   double qpreValues[iterNum][T][forwardNum];
   double qValues[iterNum][T][forwardNum];
+
+  double IForwardValues[iterNum][T][forwardNum];
+  //  double BForwardValues[iterNum][T][forwardNum];
+  //  double cashForwardValues[iterNum][T][forwardNum];
+  double W0ForwardValues[iterNum][T][forwardNum];
+  double W1ForwardValues[iterNum][T][forwardNum];
+  double W2ForwardValues[iterNum][T][forwardNum];
   int iter = 0;
   while (iter < iterNum) {
-    std::vector IForwardValues(T, std::vector<double>(forwardNum));
-    std::vector BForwardValues(T, std::vector<double>(forwardNum));
-    std::vector cashForwardValues(T, std::vector<double>(forwardNum));
-    std::vector W0ForwardValues(T, std::vector<double>(forwardNum));
-    std::vector W1ForwardValues(T, std::vector<double>(forwardNum));
-    std::vector W2ForwardValues(T, std::vector<double>(forwardNum));
-
-    auto scenarioPaths =
-        Sampling::generateScenarioPaths(forwardNum, sampleNums);
-    // scenarioPaths = {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}, {0, 1, 1},
-    //                  {1, 0, 0}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}};
+    // auto scenarioPaths =
+    //     Sampling::generateScenarioPaths(forwardNum, sampleNums);
+    int scenarioPaths[8][3] = {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}, {0, 1, 1},
+                               {1, 0, 0}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}};
 
     if (iter > 0) {
       models[0].addConstr(
@@ -160,9 +159,10 @@ void SingleProduct::solve() const {
 
     for (int n = 0; n < forwardNum; n++) {
       qValues[iter][0][n] = q[0].get(GRB_DoubleAttr_X);
-      W0ForwardValues[0][n] = W0[0].get(GRB_DoubleAttr_X);
-      W1ForwardValues[0][n] = W1[0].get(GRB_DoubleAttr_X);
-      W2ForwardValues[0][n] = W2[0].get(GRB_DoubleAttr_X);
+      W0ForwardValues[iter][0][n] = W0[0].get(GRB_DoubleAttr_X);
+      W1ForwardValues[iter][0][n] = W1[0].get(GRB_DoubleAttr_X);
+      W2ForwardValues[iter][0][n] = W2[0].get(GRB_DoubleAttr_X);
+      // }
     }
 
     // forward
@@ -177,7 +177,7 @@ void SingleProduct::solve() const {
           cutCoefficients[n][3] = intercepts[iter - 1][t][n];
         };
 
-        for (auto &finalCoefficient : cutCoefficients) {
+        for (auto &finalCoefficient : cutCoefficients) { //
           models[t].addConstr(
               theta[t] >=
               finalCoefficient[0] * (I[t - 1] + q_pre[t - 1]) +
@@ -191,13 +191,13 @@ void SingleProduct::solve() const {
         int index = scenarioPaths[n][t - 1];
         double demand = sampleDetails[t - 1][index];
         double rhs1 = t == 1 ? iniI - demand
-                             : IForwardValues[t - 1][n] +
+                             : IForwardValues[iter][t - 1][n] +
                                    qpreValues[iter][t - 2][n] - demand;
         if (t < T) {
           double rhs2 = prices[t - 1] * demand +
-                        (1 + r0) * W0ForwardValues[t - 1][n] -
-                        (1 + r1) * W1ForwardValues[t - 1][n] -
-                        (1 + r2) * W2ForwardValues[t - 1][n];
+                        (1 + r0) * W0ForwardValues[iter][t - 1][n] -
+                        (1 + r1) * W1ForwardValues[iter][t - 1][n] -
+                        (1 + r2) * W2ForwardValues[iter][t - 1][n];
           double rhs3 = qValues[iter][t - 1][n];
           models[t].setObjective(
               overheadCosts[t] + unitVariOderCosts[t] * q[t] -
@@ -205,6 +205,7 @@ void SingleProduct::solve() const {
               r0 * W0[t] + theta[t]);
           models[t].getConstr(1).set(GRB_DoubleAttr_RHS, rhs2);
           models[t].getConstr(2).set(GRB_DoubleAttr_RHS, rhs3);
+          models[t].update();
         } else
           models[t].setObjective(-prices[t - 1] * (demand - B[t - 1]) -
                                  unitSalvageValue * I[t - 1]);
@@ -217,15 +218,17 @@ void SingleProduct::solve() const {
           std::cout << e.what() << std::endl;
         }
 
-        IForwardValues[t - 1][n] = I[t - 1].get(GRB_DoubleAttr_X);
-        BForwardValues[t - 1][n] = B[t - 1].get(GRB_DoubleAttr_X);
-        cashForwardValues[t - 1][n] = cash[t - 1].get(GRB_DoubleAttr_X);
-        if (t < T) {
-          qValues[iter][t][n] = q[t].get(GRB_DoubleAttr_X);
-          qpreValues[iter][t - 1][n] = q_pre[t - 1].get(GRB_DoubleAttr_X);
-          W0ForwardValues[t][n] = W0[t].get(GRB_DoubleAttr_X);
-          W1ForwardValues[t][n] = W1[t].get(GRB_DoubleAttr_X);
-          W2ForwardValues[t][n] = W2[t].get(GRB_DoubleAttr_X);
+        if (models[t].get(GRB_IntAttr_SolCount) == 1) {
+          IForwardValues[iter][t - 1][n] = I[t - 1].get(GRB_DoubleAttr_X);
+          // BForwardValues[t - 1][n] = B[t - 1].get(GRB_DoubleAttr_X);
+          // cashForwardValues[t - 1][n] = cash[t - 1].get(GRB_DoubleAttr_X);
+          if (t < T) {
+            qValues[iter][t][n] = q[t].get(GRB_DoubleAttr_X);
+            qpreValues[iter][t - 1][n] = q_pre[t - 1].get(GRB_DoubleAttr_X);
+            W0ForwardValues[iter][t][n] = W0[t].get(GRB_DoubleAttr_X);
+            W1ForwardValues[iter][t][n] = W1[t].get(GRB_DoubleAttr_X);
+            W2ForwardValues[iter][t][n] = W2[t].get(GRB_DoubleAttr_X);
+          }
         }
       }
     }
@@ -250,13 +253,13 @@ void SingleProduct::solve() const {
         for (size_t s = 0; s < S; s++) {
           auto demand = sampleDetails[t - 1][s];
           double rhs1 = t == 1 ? iniI - demand
-                               : IForwardValues[t - 1][n] +
+                               : IForwardValues[iter][t - 1][n] +
                                      qpreValues[iter][t - 2][n] - demand;
           if (t < T) {
             double rhs2 = prices[t - 1] * demand +
-                          (1 + r0) * W0ForwardValues[t - 1][n] -
-                          (1 + r1) * W1ForwardValues[t - 1][n] -
-                          (1 + r2) * W2ForwardValues[t - 1][n];
+                          (1 + r0) * W0ForwardValues[iter][t - 1][n] -
+                          (1 + r1) * W1ForwardValues[iter][t - 1][n] -
+                          (1 + r2) * W2ForwardValues[iter][t - 1][n];
             double rhs3 = qValues[iter][t - 1][n];
             models[t].setObjective(
                 overheadCosts[t] + unitVariOderCosts[t] * q[t] -
@@ -264,6 +267,7 @@ void SingleProduct::solve() const {
                 r0 * W0[t] + theta[t]);
             models[t].getConstr(1).set(GRB_DoubleAttr_RHS, rhs2);
             models[t].getConstr(2).set(GRB_DoubleAttr_RHS, rhs3);
+            models[t].update();
           } else
             models[t].setObjective(-prices[t - 1] * (demand - B[t - 1]) -
                                    unitSalvageValue * I[t - 1]);

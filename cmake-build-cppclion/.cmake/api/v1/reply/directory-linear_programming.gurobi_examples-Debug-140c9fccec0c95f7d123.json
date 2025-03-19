@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "linear_programming/gurobi_examples",
+		"source" : "linear_programming/gurobi_examples"
+	}
+}

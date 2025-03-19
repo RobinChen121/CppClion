@@ -7,6 +7,9 @@
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/sddp_overdraft/CMakeFiles/overdraft.dir
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/sddp_overdraft/CMakeFiles/edit_cache.dir
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/sddp_overdraft/CMakeFiles/rebuild_cache.dir
+/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/gurobi_examples/CMakeFiles/gurobi_example.dir
+/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/gurobi_examples/CMakeFiles/edit_cache.dir
+/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/linear_programming/gurobi_examples/CMakeFiles/rebuild_cache.dir
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/junior_practices/CMakeFiles/junior_practice.dir
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/junior_practices/CMakeFiles/edit_cache.dir
 /Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion/junior_practices/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,244 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						4,
+						5,
+						7
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "linear_programming",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"jsonFile" : "directory-linear_programming-Debug-af924fee6500ca4b4556.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "linear_programming",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "linear_programming/sddp_overdraft",
+					"jsonFile" : "directory-linear_programming.sddp_overdraft-Debug-d62b948549a01892c7e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "linear_programming/sddp_overdraft",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "linear_programming/gurobi_examples",
+					"jsonFile" : "directory-linear_programming.gurobi_examples-Debug-140c9fccec0c95f7d123.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "linear_programming/gurobi_examples",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "junior_practices",
+					"jsonFile" : "directory-junior_practices-Debug-b0b7f1cab58da30bdfa5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "junior_practices",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "stochastic_inventory",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-stochastic_inventory-Debug-e3c48947aed8bf5dab27.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "stochastic_inventory",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "stochastic_inventory/cash",
+					"jsonFile" : "directory-stochastic_inventory.cash-Debug-11e24172bc8a50ca071f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 0,
+					"source" : "stochastic_inventory/cash",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "utils",
+					"jsonFile" : "directory-utils-Debug-ecc62ddb27eede1f7ffa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "utils",
+					"targetIndexes" : 
+					[
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "CppClion",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CppClion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CppClion-Debug-d60058507e918994de7c.json",
+					"name" : "CppClion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "LP::@0cf50210e3523323234e",
+					"jsonFile" : "target-LP-Debug-a84794d30f8cfd2d0ac4.json",
+					"name" : "LP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "cash-sdp::@686179159669958344ec",
+					"jsonFile" : "target-cash-sdp-Debug-272cabd35c983449fb5a.json",
+					"name" : "cash-sdp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gurobi_example::@7290f6e2dca3cafcda7e",
+					"jsonFile" : "target-gurobi_example-Debug-9b5cbb636a5a9cf2c56a.json",
+					"name" : "gurobi_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "inventory::@8359d8b257de3d65d78b",
+					"jsonFile" : "target-inventory-Debug-8542b33d223f7b60d3eb.json",
+					"name" : "inventory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "junior_practice::@269e48a9846c25342454",
+					"jsonFile" : "target-junior_practice-Debug-06948eb2443686631de8.json",
+					"name" : "junior_practice",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "overdraft::@b91144f6cfd2f2b0eb77",
+					"jsonFile" : "target-overdraft-Debug-e780a0c64ea24b9c0489.json",
+					"name" : "overdraft",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "utils::@c810615cce0f7acb82dc",
+					"jsonFile" : "target-utils-Debug-a2d4c09caef13187da91.json",
+					"name" : "utils",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/zhenchen/CLionProjects/CppOR/cmake-build-cppclion",
+		"source" : "/Users/zhenchen/CLionProjects/CppOR"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
