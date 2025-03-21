@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "stochastic_inventory/cash/cash-sdp"
+			"path" : "stochastic_inventory/states/states"
 		}
 	],
 	"backtrace" : 1,
@@ -18,7 +18,7 @@
 		],
 		"files" : 
 		[
-			"stochastic_inventory/cash/CMakeLists.txt",
+			"stochastic_inventory/states/CMakeLists.txt",
 			"/opt/anaconda3/lib/cmake/boost_filesystem-1.82.0/boost_filesystem-config.cmake",
 			"/opt/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake"
 		],
@@ -30,19 +30,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 23,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
@@ -136,16 +136,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5
+				0
 			]
 		}
 	],
-	"id" : "cash-sdp::@686179159669958344ec",
+	"id" : "states::@385b8a4d49cac343cbbd",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -185,12 +180,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "cash-sdp",
-	"nameOnDisk" : "cash-sdp",
+	"name" : "states",
+	"nameOnDisk" : "states",
 	"paths" : 
 	{
-		"build" : "stochastic_inventory/cash",
-		"source" : "stochastic_inventory/cash"
+		"build" : "stochastic_inventory/states",
+		"source" : "stochastic_inventory/states"
 	},
 	"sourceGroups" : 
 	[
@@ -198,12 +193,14 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
 			]
 		}
 	],
@@ -212,38 +209,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "stochastic_inventory/states/State.cpp",
+			"path" : "stochastic_inventory/states/CashLeadtimeMultiState.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "utils/PMF.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "stochastic_inventory/states/CashState.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "stochastic_inventory/states/CashLeadtimeState.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "utils/selfHash.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "stochastic_inventory/cash/overdraftLeadtimeSingleProduct.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "stochastic_inventory/states/CashLeadtimeMultiState.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

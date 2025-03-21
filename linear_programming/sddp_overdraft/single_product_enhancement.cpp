@@ -2,9 +2,11 @@
  * Created by Zhen Chen on 2025/3/13.
  * Email: chen.zhen5526@gmail.com
  * Description:
+ * optimal solution is 167.31;
  * without removing duplicate constraints, running time is 2.2s while 0.83s for
  * removing; with avoiding adding same constraints during iteration, running
- * time is 0.66s;
+ * time is 0.66s; with pre solving some vales of variables in forward computing,
+ * running time is 0.48s;
  *
  */
 #include "../../utils/Sampling.h"
@@ -21,8 +23,8 @@ private:
   // problem settings
   double iniI = 0;
   double iniCash = 0;
-  std::vector<double> meanDemands = {15, 15, 15,
-                                     15}; // std::vector<double>(4, 15);
+  std::vector<double> meanDemands = {15.0, 15.0, 15.0, 15.0,
+                                     15.0}; // std::vector<double>(4, 15);
   std::string distribution_name = "poisson";
   size_t T = meanDemands.size();
   std::vector<double> unitVariOderCosts = std::vector<double>(T, 1);
@@ -36,7 +38,7 @@ private:
 
   // sddp settings
   int sampleNum = 10;
-  int forwardNum = 20;
+  int forwardNum = 30;
   int iterNum = 30;
   double thetaInitialValue = -500;
 
@@ -61,8 +63,8 @@ void SingleProduct::solve() const {
 
   // decision variables
   std::vector<GRBVar> q(T);
-  std::vector<GRBVar> q_pre(T);
-  std::vector<GRBVar> theta(T - 1);
+  std::vector<GRBVar> q_pre(T - 1);
+  std::vector<GRBVar> theta(T);
   std::vector<GRBVar> I(T);
   std::vector<GRBVar> B(T);
   std::vector<GRBVar> cash(T);
@@ -146,8 +148,8 @@ void SingleProduct::solve() const {
     //                  {1, 0, 0}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}};
 
     if (iter > 0) {
-      if (iter == 2) { // remove the big M constraints at iteration 2
-        int index = models[0].get(GRB_IntAttr_NumConstrs) - 2;
+      if (iter == 1) { // remove the big M constraints at iteration 2
+        int index = models[0].get(GRB_IntAttr_NumConstrs) - 1;
         models[0].remove(models[0].getConstr(index));
       }
 
@@ -194,10 +196,8 @@ void SingleProduct::solve() const {
     // forward
     for (int t = 1; t < T + 1; t++) {
 
-      if (iter == 2 and t < T) { // remove the big M constraints at iteration 2
-        // models[t].write("iter_" + std::to_string(iter + 1) + "_sub_" +
-        //                 std::to_string(t) + ".lp");
-        int index = models[t].get(GRB_IntAttr_NumConstrs) - 2;
+      if (iter == 1 and t < T) { // remove the big M constraints at iteration 2
+        int index = models[t].get(GRB_IntAttr_NumConstrs) - 1;
         models[t].remove(models[t].getConstr(index));
       }
 
@@ -231,16 +231,17 @@ void SingleProduct::solve() const {
       }
 
       for (int n = 0; n < forwardNum; n++) {
+        double rhs2 = 0;
         int index = scenarioPaths[n][t - 1];
         double demand = sampleDetails[t - 1][index];
         double rhs1 = t == 1 ? iniI - demand
                              : IForwardValues[iter][t - 1][n] +
                                    qpreValues[iter][t - 2][n] - demand;
         if (t < T) {
-          double rhs2 = prices[t - 1] * demand +
-                        (1 + r0) * W0ForwardValues[iter][t - 1][n] -
-                        (1 + r1) * W1ForwardValues[iter][t - 1][n] -
-                        (1 + r2) * W2ForwardValues[iter][t - 1][n];
+          rhs2 = prices[t - 1] * demand +
+                 (1 + r0) * W0ForwardValues[iter][t - 1][n] -
+                 (1 + r1) * W1ForwardValues[iter][t - 1][n] -
+                 (1 + r2) * W2ForwardValues[iter][t - 1][n];
           double rhs3 = qValues[iter][t - 1][n];
           models[t].setObjective(
               overheadCosts[t] + unitVariOderCosts[t] * q[t] -
@@ -253,22 +254,42 @@ void SingleProduct::solve() const {
                                  unitSalvageValue * I[t - 1]);
         models[t].getConstr(0).set(GRB_DoubleAttr_RHS, rhs1);
 
-        // optimize
-        try {
-          models[t].optimize();
-        } catch (const std::exception &e) {
-          std::cout << e.what() << std::endl;
+        // set lb and up for some variables
+        double this_I_value = rhs1 > 0 ? rhs1 : 0;
+        double this_B_value = rhs1 < 0 ? -rhs1 : 0;
+        I[t - 1].set(GRB_DoubleAttr_LB, this_I_value);
+        I[t - 1].set(GRB_DoubleAttr_UB, this_I_value);
+        B[t - 1].set(GRB_DoubleAttr_LB, this_B_value);
+        B[t - 1].set(GRB_DoubleAttr_UB, this_B_value);
+        if (t < T) {
+          double this_end_cash = rhs2 - prices[t - 1] * this_B_value;
+          cash[t - 1].set(GRB_DoubleAttr_LB, this_end_cash);
+          cash[t - 1].set(GRB_DoubleAttr_UB, this_end_cash);
         }
 
-        // if (iter == 2) {
-        //   // remove the big M constraints at iteration 2
-        //   models[t].write("iter_" + std::to_string(iter + 1) + "_sub_" +
-        //                   std::to_string(t) + ".sol");
-        // }
+        // optimize
+        models[t].optimize();
+        if (models[t].get(GRB_IntAttr_Status) != 2) {
+          models[t].write("iter" + std::to_string(iter + 1) + "_sub_" +
+                          std::to_string(t) + "^" + std::to_string(n + 1) +
+                          ".lp");
 
-        IForwardValues[iter][t - 1][n] = I[t - 1].get(GRB_DoubleAttr_X);
-        // BForwardValues[t - 1][n] = B[t - 1].get(GRB_DoubleAttr_X);
-        // cashForwardValues[t - 1][n] = cash[t - 1].get(GRB_DoubleAttr_X);
+          std::cout << "optimizing status " << models[t].get(GRB_IntAttr_Status)
+                    << std::endl;
+        }
+
+        try {
+          IForwardValues[iter][t - 1][n] = I[t - 1].get(GRB_DoubleAttr_X);
+        } catch (...) {
+          models[t].write("iter" + std::to_string(iter + 1) + "_sub_" +
+                          std::to_string(t) + "^" + std::to_string(n + 1) +
+                          ".lp");
+
+          std::cout << "optimizing status " << models[t].get(GRB_IntAttr_Status)
+                    << std::endl;
+          ;
+        }
+
         if (t < T) {
           qValues[iter][t][n] = q[t].get(GRB_DoubleAttr_X);
           qpreValues[iter][t - 1][n] = q_pre[t - 1].get(GRB_DoubleAttr_X);
@@ -294,6 +315,16 @@ void SingleProduct::solve() const {
       }
     }
     for (size_t t = T; t > 0; t--) {
+      // de set lb and up for some variables
+      I[t - 1].set(GRB_DoubleAttr_LB, 0.0);
+      I[t - 1].set(GRB_DoubleAttr_UB, GRB_INFINITY);
+      B[t - 1].set(GRB_DoubleAttr_LB, 0.0);
+      B[t - 1].set(GRB_DoubleAttr_UB, GRB_INFINITY);
+      if (t < T) {
+        cash[t - 1].set(GRB_DoubleAttr_LB, -GRB_INFINITY);
+        cash[t - 1].set(GRB_DoubleAttr_UB, GRB_INFINITY);
+      }
+
       for (int n = 0; n < forwardNum; n++) {
         size_t S = sampleDetails[t - 1].size();
         for (size_t s = 0; s < S; s++) {
@@ -319,10 +350,12 @@ void SingleProduct::solve() const {
           models[t].getConstr(0).set(GRB_DoubleAttr_RHS, rhs1);
 
           // optimize
-          try {
-            models[t].optimize();
-          } catch (const std::exception &e) {
-            std::cout << e.what() << std::endl;
+          models[t].optimize();
+          if (models[t].get(GRB_IntAttr_Status) != 2) {
+            std::cout << models[t].get(GRB_IntAttr_Status) << "\n";
+            models[t].write("iter_" + std::to_string(iter + 1) + "_sub_" +
+                            std::to_string(t) + "^" + std::to_string(n + 1) +
+                            ".lp");
           }
           // if (iter == 3 and t == 1) {
           //   models[t].write("iter_" + std::to_string(iter + 1) + "_sub_" +
@@ -347,8 +380,9 @@ void SingleProduct::solve() const {
             interceptValues[t - 1][n][s] +=
                 -pi[0] * demand - prices[t - 1] * demand;
           }
-          for (size_t k = 3; k < piNum; k++)
+          for (size_t k = 3; k < piNum; k++) {
             interceptValues[t - 1][n][s] += pi[k] * rhs[k];
+          }
           slope1Values[t - 1][n][s] = pi[0];
           if (t < T) {
             slope2Values[t - 1][n][s] = pi[1];
@@ -392,6 +426,9 @@ void SingleProduct::solve() const {
   std::cout << "after " << iter << " iterations: " << std::endl;
   std::cout << "final expected cash balance is " << finalValue << std::endl;
   std::cout << "ordering Q in the first period is " << Q1 << std::endl;
+  double optimal_value = 167.31;
+  double gap = std::abs((finalValue - optimal_value) / optimal_value);
+  std::cout << "gap is " << std::format("{: .2f}%", gap * 100) << std::endl;
 }
 
 int main() {

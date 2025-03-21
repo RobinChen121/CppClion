@@ -91,7 +91,7 @@ Sampling::generateScenarioPaths(const int scenarioNum,
 
   for (int i = 0; i < scenarioNum; ++i) {
     for (int t = 0; t < T; ++t) {
-      scenarioPaths[i][t] = randInt(0, sampleNums[t]);
+      scenarioPaths[i][t] = randInt(0, sampleNums[t] - 1);
     }
   }
   return scenarioPaths;

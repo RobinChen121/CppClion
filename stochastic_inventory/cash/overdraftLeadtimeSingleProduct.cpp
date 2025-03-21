@@ -9,6 +9,10 @@
  * computations: after running the DP sometimes in Java, its result becomes not
  * related with the number of decimals.
  *
+ * 5 periods, rounding with 0 decimal, running time is 60.5s.
+ * {15, 15, 15, 15, 15}, rounding with 1 decimal, running time is 876.99s,
+ * final value is 250.998, opt Q at period 1 is 24.
+ *
  *
  */
 #include "../../utils/PMF.h"
@@ -25,9 +29,9 @@ private:
   double ini_cash = 0;
   CashLeadtimeState ini_state =
       CashLeadtimeState{1, ini_inventory, ini_cash, 0.0};
-  std::vector<double> demands = {15, 15, 15, 15};
+  static constexpr std::vector<double> demands = {15, 15, 15, 15, 15};
   std::string distribution_type = "poisson";
-  size_t T = demands.size(); // 直接获取大小
+  static constexpr size_t T = demands.size(); // 直接获取大小
 
   std::vector<double> prices = std::vector<double>(T, 10.0);
   // std::vector<double> fixed_order_costs = std::vector<double>(T, 0.0);
@@ -113,7 +117,7 @@ public:
     nextInventory =
         nextInventory < min_inventory ? min_inventory : nextInventory;
     // cash is integer or not
-    // nextCash = std::round(nextCash * 1) / 1.0; // the right should be a
+    nextCash = std::round(nextCash * 10) / 10.0; // the right should be a
     // decimal
     return CashLeadtimeState{state.getPeriod() + 1, nextInventory, nextCash,
                              nextQpre};

@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(cash)
+add_subdirectory(states)
 
 set(CMAKE_BUILD_TYPE Release) # 运行 Debug 还是 Release
 

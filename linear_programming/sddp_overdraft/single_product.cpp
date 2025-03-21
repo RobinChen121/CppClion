@@ -6,12 +6,13 @@
  * removing.
  *
  */
-// #include "../../utils/Sampling.h"
+#include "../../utils/Sampling.h"
 #include "gurobi_c++.h"
 
-// #include <iomanip> // for precision
-#include <numeric>
+#include <iomanip> // for precision
+#include <iostream>
 // #include <unordered_set>
+#include <numeric> // for accumulate
 #include <vector>
 
 class SingleProduct {
@@ -22,7 +23,7 @@ private:
   std::vector<double> meanDemands = {15, 15, 15,
                                      15}; // std::vector<double>(4, 15);
   std::string distribution_name = "poisson";
-  size_t T = 3; // meanDemands.size();
+  size_t T = meanDemands.size();
   std::vector<double> unitVariOderCosts = std::vector<double>(T, 1);
   std::vector<double> prices = std::vector<double>(T, 10);
   double unitSalvageValue = 0.5;
@@ -33,8 +34,8 @@ private:
   double overdraftLimit = 500;
 
   // sddp settings
-  int sampleNum = 2;  // 10;
-  int forwardNum = 8; // 20;
+  int sampleNum = 10;  // 10;
+  int forwardNum = 20; // 20;
   int iterNum = 30;
   double thetaInitialValue = -500;
 
@@ -45,12 +46,13 @@ public:
 void SingleProduct::solve() const {
   const std::vector<int> sampleNums(T, sampleNum);
   std::vector<std::vector<double>> sampleDetails(T);
-  // for (int t = 0; t < T; t++) {
-  //   sampleDetails[t].resize(sampleNums[t]);
-  //   auto sampling = Sampling(distribution_name, meanDemands[t]);
-  //   sampleDetails[t] = sampling.generateSamples(sampleNums[t]);
-  // }
-  sampleDetails = {{5, 15}, {5, 15}, {5, 15}};
+  for (int t = 0; t < T; t++) {
+    sampleDetails[t].resize(sampleNums[t]);
+    auto sampling = Sampling(distribution_name, meanDemands[t]);
+    sampleDetails[t] = sampling.generateSamples(sampleNums[t]);
+  }
+
+  // sampleDetails = {{5, 15}, {5, 15}, {5, 15}};
 
   // gurobi environments and model
   GRBEnv env;
@@ -59,7 +61,7 @@ void SingleProduct::solve() const {
 
   // decision variables
   std::vector<GRBVar> q(T);
-  std::vector<GRBVar> q_pre(T);
+  std::vector<GRBVar> q_pre(T-1);
   std::vector<GRBVar> theta(T);
   std::vector<GRBVar> I(T);
   std::vector<GRBVar> B(T);
@@ -132,10 +134,12 @@ void SingleProduct::solve() const {
   double W2ForwardValues[iterNum][T][forwardNum];
   int iter = 0;
   while (iter < iterNum) {
-    // auto scenarioPaths =
-    //     Sampling::generateScenarioPaths(forwardNum, sampleNums);
-    int scenarioPaths[8][3] = {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}, {0, 1, 1},
-                               {1, 0, 0}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}};
+    auto scenarioPaths =
+        Sampling::generateScenarioPaths(forwardNum, sampleNums);
+
+    // int scenarioPaths[8][3] = {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}, {0, 1, 1},
+    // {1, 0, 0}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}
+    // };
 
     if (iter > 0) {
       models[0].addConstr(
